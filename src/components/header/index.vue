@@ -43,12 +43,12 @@
                                 :key="category.id"
                                 class="group children px-6 py-2 min-w-52">
                                 <RouterLink
-                                    to="/"
+                                    :to="`/product/${category.slug}`"
                                     class="block text-nowrap group-[.children:hover]:text-primary">
                                     <span> {{ category.name }}</span>
 
                                     <p
-                                        className="duration-500 group-[.children:hover]:w-full w-0 h-0.5 bg-primary group-[.active]:w-full"></p>
+                                        className="duration-500 group-[.children:hover]:w-full w-0 h-0.5 bg-primary group-[.children.active]:w-full"></p>
                                 </RouterLink>
                             </li>
                         </ul>
@@ -104,6 +104,8 @@
         isMobileMenu.value = !isMobileMenu.value;
     };
 
+    info(route.path);
+
     // Navigation items with active state
     const navItem = [
         {
@@ -123,14 +125,14 @@
         {
             id: 2,
             name: 'Product',
-            href: '#',
+            href: '/product',
             active: route.path.includes('/product'),
             children: [
-                { id: 1, name: 'Clothing' },
-                { id: 2, name: 'Footwear' },
-                { id: 3, name: 'Accessories' },
-                { id: 4, name: 'Jewelry' },
-                { id: 5, name: 'Bags' },
+                { id: 1, name: 'Clothing', slug: 'Clothing' },
+                { id: 2, name: 'Footwear', slug: 'Footwear' },
+                { id: 3, name: 'Accessories', slug: 'Accessories' },
+                { id: 4, name: 'Jewelry', slug: 'Jewelry' },
+                { id: 5, name: 'Bags', slug: 'Bags' },
             ],
         },
         {

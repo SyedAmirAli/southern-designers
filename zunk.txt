@@ -1,0 +1,141 @@
+
+                <!-- <div
+                    class="mt-10 lg:mt-16 flex flex-col lg:flex-row bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] lg:before:pt-[70%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.mission?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.mission?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.mission?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.mission?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.mission?.attributes?.description }}
+                        </p>
+                    </div>
+                </div> -->
+
+                <!-- <div
+                    class="mt-10 lg:mt-16 flex flex-col-reverse lg:flex-row-reverse bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] lg:before:pt-[70%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.vision?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full object-cover" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.vision?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.vision?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.vision?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.vision?.attributes?.description }}
+                        </p>
+                    </div>
+                </div> -->
+------------------------------------------------------------------------------------------------------------------------------------------
+ <!-- Mission Container -->
+                <div
+                    class="mt-10 lg:mt-16 flex flex-col lg:flex-row bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.mission?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full object-cover" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.mission?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.mission?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.mission?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.mission?.attributes?.description }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vision Container -->
+                <div
+                    class="mt-10 lg:mt-16 flex flex-col-reverse lg:flex-row-reverse bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.vision?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full object-cover" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.vision?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.vision?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.vision?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.vision?.attributes?.description }}
+                        </p>
+                    </div>
+                </div>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+

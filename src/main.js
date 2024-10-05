@@ -11,6 +11,8 @@ const app = createApp(App);
 
 window.info = info;
 app.config.globalProperties.info = info;
+app.config.globalProperties.parser = parser;
+app.config.globalProperties.assetUrl = assetUrl;
 app.config.globalProperties.asset = window.asset;
 app.config.globalProperties.route = window.route;
 app.config.globalProperties.mainUrl = window.mainUrl;
@@ -40,4 +42,18 @@ function info(...args) {
     }
 
     return null;
+}
+
+function parser(data) {
+    if (Array.isArray(data)) return data;
+
+    try {
+        return JSON.parse(data);
+    } catch (error) {
+        return [];
+    }
+}
+
+function assetUrl(endpoint, prefix = '/') {
+    return `http://localhost:8000${prefix}${endpoint}`;
 }

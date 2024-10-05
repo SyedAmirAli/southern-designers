@@ -1,10 +1,12 @@
 <script setup>
     import BrandCarousel from '@/components/home/BrandCarousel.vue';
+    import ContactForm from '@/components/home/ContactForm.vue';
     import ExtraServices from '@/components/home/ExtraServices.vue';
     import Intro from '@/components/home/Intro.vue';
     import MainServices from '@/components/home/MainServices.vue';
     import OurValues from '@/components/home/OurValues.vue';
     import PopularServices from '@/components/home/PopularServices.vue';
+    import ProductShowcase from '@/components/home/ProductShowcase.vue';
     import ServicesCounter from '@/components/home/ServicesCounter.vue';
     import { reactive } from 'vue';
 
@@ -190,8 +192,14 @@
             <!-- Client Reviews / Our Values -->
             <OurValues :services="reviews" />
 
+            <!-- Showcase Products -->
+            <ProductShowcase />
+
             <!-- Brands Carousel -->
             <BrandCarousel />
+
+            <!-- Contact Form -->
+            <ContactForm />
         </article>
     </main>
 </template>
