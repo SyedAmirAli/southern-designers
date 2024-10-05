@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="bg-secondary text-slate-300">
         <hr
             class="h-px w-full border-t border-solid border-slate-300/70 mb-6" />
         <div class="w-full flex items-center justify-center pt-6">
@@ -14,7 +14,7 @@
                                     class="w-32" />
                             </figure>
                             <p
-                                class="py-3 px-1 text-justify text-lg font-semibold">
+                                class="py-3 px-1 text-justify text-lg font-medium">
                                 Green Life Group - a 100% garment export group
                                 of company who believes in the art of producing
                                 honest and approving garments.
@@ -41,7 +41,7 @@
                                         aria-hidden="true"></i
                                     ><a
                                         href="#"
-                                        class="duration-500 hover:ml-3 hover:text-primary font-semibold hover:underline text-lg"
+                                        class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
                                         >About Us</a
                                     >
                                 </li>
@@ -52,7 +52,7 @@
                                         aria-hidden="true"></i
                                     ><a
                                         href="#"
-                                        class="duration-500 hover:ml-3 hover:text-primary font-semibold hover:underline text-lg"
+                                        class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
                                         >Company History</a
                                     >
                                 </li>
@@ -63,7 +63,7 @@
                                         aria-hidden="true"></i
                                     ><a
                                         href="#"
-                                        class="duration-500 hover:ml-3 hover:text-primary font-semibold hover:underline text-lg"
+                                        class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
                                         >Need a Career</a
                                     >
                                 </li>
@@ -74,7 +74,7 @@
                                         aria-hidden="true"></i
                                     ><a
                                         href="#"
-                                        class="duration-500 hover:ml-3 hover:text-primary font-semibold hover:underline text-lg"
+                                        class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
                                         >Working Process</a
                                     >
                                 </li>
@@ -90,13 +90,13 @@
                                         class="fa-solid fa-calendar-days"
                                         aria-hidden="true"></i
                                     ><span
-                                        class="font-bold text-sm text-slate-600 px-2"
+                                        class="font-bold text-sm text-slate-400 px-2"
                                         >Southern Designers Ltd.</span
                                     >
                                 </p>
                                 <a
                                     href="#tel:+8809611651500"
-                                    class="font-semibold text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block"
+                                    class="font-medium text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block"
                                     >Zirabo, Savar, Dhaka info@sdlbd.net</a
                                 >
                             </div>
@@ -106,13 +106,13 @@
                                         class="fa-solid fa-calendar-days"
                                         aria-hidden="true"></i
                                     ><span
-                                        class="font-bold text-sm text-slate-600 px-2"
+                                        class="font-bold text-sm text-slate-400 px-2"
                                         >Green Life Knit Composite Ltd.</span
                                     >
                                 </p>
                                 <a
                                     href="tel:#tel:+8809611651500"
-                                    class="font-semibold text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block"
+                                    class="font-medium text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block"
                                     >Tongabari, Ashulia, Savar
                                     info@greenlifebd.com</a
                                 >
@@ -128,7 +128,7 @@
                                             aria-hidden="true"></i>
                                     </figure>
                                     <span
-                                        class="font-bold text-lg text-slate-600"
+                                        class="font-bold text-lg text-slate-400"
                                         >House# 16, Road# 19, Sector# 4, Uttara,
                                         Dhaka - 1230 Bangladesh.</span
                                     >
@@ -142,7 +142,7 @@
                                             aria-hidden="true"></i>
                                     </figure>
                                     <span
-                                        class="font-bold text-lg text-slate-600"
+                                        class="font-bold text-lg text-slate-400"
                                         >info@greenlifebd.com</span
                                     >
                                 </div>
@@ -155,7 +155,7 @@
                                             aria-hidden="true"></i>
                                     </figure>
                                     <span
-                                        class="font-bold text-lg text-slate-600"
+                                        class="font-bold text-lg text-slate-400"
                                         >+8809611651500</span
                                     >
                                 </div>
