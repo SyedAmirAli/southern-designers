@@ -24,7 +24,7 @@
                         class="opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 cursor-pointer duration-300 absolute left-0 bottom-0 w-full h-[70%] rounded-3xl bg-primary"></div>
 
                     <!-- <image-figure :src="item.image" /> -->
-                    <figure class="size-80 relative z-10">
+                    <figure class="size-80 relative">
                         <img
                             :src="assetUrl(item.image)"
                             alt="Sponsor A Child"

@@ -55,5 +55,5 @@ function parser(data) {
 }
 
 function assetUrl(endpoint, prefix = '/') {
-    return `http://localhost:8000${prefix}${endpoint}`;
+    return `https://greenlifebd.ctpse.info${prefix}${endpoint}`;
 }

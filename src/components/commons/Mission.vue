@@ -39,11 +39,11 @@
 
     // Defining the props directly for each value
     const props = defineProps({
-        image: { type: String, required: true },
-        icon: { type: String, required: true },
-        heading: { type: String, required: true },
-        title: { type: String, required: true },
-        description: { type: String, required: true },
+        image: { type: [String, undefined], default: '' },
+        icon: { type: [String, undefined], default: '' },
+        heading: { type: [String, undefined], default: '' },
+        title: { type: [String, undefined], default: '' },
+        description: { type: [String, undefined], default: '' },
         reverse: { type: Boolean, required: false },
     });
 </script>

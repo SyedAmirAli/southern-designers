@@ -1,12 +1,22 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { ref, computed } from 'vue';
+import { defineStore } from 'pinia';
+import { useRoute } from 'vue-router';
 
 export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
+    const route = useRoute();
+    info('header', route.path);
 
-  return { count, doubleCount, increment }
-})
+    const count = ref(0);
+    const currentPath = ref('/');
+
+    const doubleCount = computed(() => count.value * 2);
+    function increment() {
+        count.value++;
+    }
+
+    function setCurrentPath() {
+        currentPath.value = route.path;
+    }
+
+    return { count, doubleCount, increment, currentPath, setCurrentPath };
+});

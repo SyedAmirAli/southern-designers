@@ -20,7 +20,7 @@
 
         <div
             class="bg-white w-full flex flex-col items-center justify-center mb-6">
-            <div class="container pt-6">
+            <div class="container pt-6" v-if="about">
                 <Mission
                     :image="about?.mission?.attributes?.image"
                     :icon="about?.mission?.attributes?.icon"

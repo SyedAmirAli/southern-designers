@@ -5,7 +5,7 @@ export const sustainability = {
         attributes: {
             heading: 'Our Vission',
             title: 'Our Mission is to provide the best services with you.',
-            image: 'uploads/1726038408-----product-9.jpg',
+            image: 'uploads/1727931638-rand-157002-----woven-8.jpg',
             icon: '<i class="fa-solid fa-person-circle-exclamation"></i>',
             description:
                 'Green Life Group - a 100% garment export group of company who believes in the art of producing honest and approving garments and fabric to the world of fashion and clothing industry. While positioning ourselves as a reliable supplier of global brands, we allow us to explore the potential and create a niche in the export business. We are strictly maintaining a very high standard of compliance even within the smallest concern of our group. This is another key reason which attracts the leading buyers. Our range covers the offerings of fashion needs for men, women and kids across apparels and accessories, all in tune with the current market trend. Since inception, with a commitment of delivery on time with perfect quality, we have made sure to offer the highest level of buyer satisfaction throughout the globe. All of our factories are situated in factory owned land. With accumulate production capacity of 15Million piece garments a year, the annual turnover of the group is USD 60 Million.',
@@ -20,7 +20,7 @@ export const sustainability = {
         attributes: {
             heading: 'Our Mission',
             title: 'Our Mission is to provide the best services with you.',
-            image: 'uploads/1726038484-----product-2.jpg',
+            image: 'uploads/1727931638-rand-157002-----woven-8.jpg',
             icon: '<i class="fa-solid fa-person-circle-exclamation"></i>',
             description:
                 'Green Life Group - a 100% garment export group of company who believes in the art of producing honest and approving garments and fabric to the world of fashion and clothing industry. While positioning ourselves as a reliable supplier of global brands, we allow us to explore the potential and create a niche in the export business. We are strictly maintaining a very high standard of compliance even within the smallest concern of our group. This is another key reason which attracts the leading buyers. Our range covers the offerings of fashion needs for men, women and kids across apparels and accessories, all in tune with the current market trend. Since inception, with a commitment of delivery on time with perfect quality, we have made sure to offer the highest level of buyer satisfaction throughout the globe. All of our factories are situated in factory owned land. With accumulate production capacity of 15Million piece garments a year, the annual turnover of the group is USD 60 Million.',

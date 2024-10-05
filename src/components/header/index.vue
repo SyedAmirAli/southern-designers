@@ -92,41 +92,41 @@
 </template>
 
 <script setup>
-    import { onMounted, onUnmounted, ref } from 'vue';
+    import { onMounted, onUnmounted, reactive, ref, watch } from 'vue';
     import { useRoute } from 'vue-router';
 
     // Reactive state
     const route = useRoute();
     const isMobileMenu = ref(false);
 
+    const path = ref(route.path); // Initialize path with the current route's path
+
     // Toggle button functionality
     const toggleButton = () => {
         isMobileMenu.value = !isMobileMenu.value;
     };
 
-    info(route.path);
-
     // Navigation items with active state
-    const navItem = [
+    const navItem = reactive([
         {
             id: 1,
             name: 'Home',
             href: '/',
-            active: '/' === route.path,
+            active: false,
             children: [],
         },
         {
             id: 6,
             name: 'About',
             href: '/about',
-            active: '/about' === route.path,
+            active: false,
             children: [],
         },
         {
             id: 2,
             name: 'Product',
             href: '/product',
-            active: route.path.includes('/product'),
+            active: false,
             children: [
                 { id: 1, name: 'Clothing', slug: 'Clothing' },
                 { id: 2, name: 'Footwear', slug: 'Footwear' },
@@ -139,24 +139,162 @@
             id: 3,
             name: 'Sustainability',
             href: '/sustainability',
-            active: '/sustainability' === route.path,
+            active: false,
             children: [],
         },
         {
             id: 4,
             name: 'Media',
             href: '/media',
-            active: '/media' === route.path,
+            active: false,
             children: [],
         },
         {
             id: 7,
             name: 'Contact',
             href: '/contact',
-            active: '/contact' === route.path,
+            active: false,
             children: [],
         },
-    ];
+    ]);
+
+    // Function to update the `active` state of nav items based on the current path
+    function updateActiveState(currentPath) {
+        navItem.forEach((item) => {
+            if (item.href === currentPath) {
+                item.active = true;
+            } else if (
+                item.href === '/product' &&
+                currentPath.includes('/product')
+            ) {
+                item.active = true; // For `/product` path or any dynamic product route
+            } else {
+                item.active = false;
+            }
+        });
+    }
+
+    // Run on mount to set the initial active state
+    updateActiveState(path.value);
+
+    // Scroll functionality
+    const scrolled = ref(false);
+
+    function throttle(fn, wait) {
+        let lastCall = 0;
+        return function (...args) {
+            const now = new Date().getTime();
+            if (now - lastCall < wait) return;
+            lastCall = now;
+            return fn(...args);
+        };
+    }
+
+    const handleScroll = () => {
+        scrolled.value = window.scrollY > 50;
+    };
+
+    const throttledScroll = throttle(handleScroll, 100); // Throttle to run once every 100ms
+
+    // Watch for route changes and update the path and active state
+    watch(
+        () => route.path,
+        (newPath) => {
+            path.value = newPath;
+            updateActiveState(newPath);
+            info('New path:', newPath);
+        },
+        { immediate: true } // To run the watcher immediately on mount
+    );
+
+    onMounted(() => {
+        window.addEventListener('scroll', throttledScroll);
+    });
+
+    onUnmounted(() => {
+        window.removeEventListener('scroll', throttledScroll);
+    });
+</script>
+
+<!-- <script setup>
+    import { useCounterStore } from '@/stores/counter';
+    import { onMounted, onUnmounted, reactive, ref, watch } from 'vue';
+    import { useRoute } from 'vue-router';
+
+    // Reactive state
+    const route = useRoute();
+    const isMobileMenu = ref(false);
+
+    const path = ref('/');
+
+    // Toggle button functionality
+    const toggleButton = () => {
+        isMobileMenu.value = !isMobileMenu.value;
+    };
+
+    // const counter = useCounterStore();
+    info('header', path.value);
+
+    watch(
+        () => route.path, // Watch the path specifically
+        (newPath) => {
+            path.value = newPath;
+            info('New path:', newPath); // Log the current path on change
+            info('header', path.value);
+        }
+    );
+
+    // Navigation items with active state
+    const navItem = reactive([
+        {
+            id: 1,
+            name: 'Home',
+            href: '/',
+            active: '/' === path.value,
+            children: [],
+        },
+        {
+            id: 6,
+            name: 'About',
+            href: '/about',
+            active: '/about' === path.value,
+            children: [],
+        },
+        {
+            id: 2,
+            name: 'Product',
+            href: '/product',
+            active: path.value.includes('/product'),
+            children: [
+                { id: 1, name: 'Clothing', slug: 'Clothing' },
+                { id: 2, name: 'Footwear', slug: 'Footwear' },
+                { id: 3, name: 'Accessories', slug: 'Accessories' },
+                { id: 4, name: 'Jewelry', slug: 'Jewelry' },
+                { id: 5, name: 'Bags', slug: 'Bags' },
+            ],
+        },
+        {
+            id: 3,
+            name: 'Sustainability',
+            href: '/sustainability',
+            active: '/sustainability' === path.value,
+            children: [],
+        },
+        {
+            id: 4,
+            name: 'Media',
+            href: '/media',
+            active: '/media' === path.value,
+            children: [],
+        },
+        {
+            id: 7,
+            name: 'Contact',
+            href: '/contact',
+            active: '/contact' === path.value,
+            children: [],
+        },
+    ]);
 
     function throttle(fn, wait) {
         let lastCall = 0;
@@ -183,6 +321,6 @@
     onUnmounted(() => {
         window.removeEventListener('scroll', throttledScroll);
     });
-</script>
+</script> -->
 
 <style scoped></style>
