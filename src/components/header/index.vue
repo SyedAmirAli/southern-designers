@@ -202,7 +202,6 @@
         (newPath) => {
             path.value = newPath;
             updateActiveState(newPath);
-            info('New path:', newPath);
         },
         { immediate: true } // To run the watcher immediately on mount
     );

@@ -1,81 +1,33 @@
 <template>
     <div
-        class="w-full flex items-center justify-center -mt-28 lg:-mt-40 px-4 lg:px-0">
-        <div
-            class="container p-16 bg-primary flex flex-wrap items-center justify-between rounded-xl gap-y-10">
+        class="w-full flex items-center justify-center -mt-28 lg:-mt-40 px-4 lg:px-0 pb-4">
+        <div class="container flex flex-wrap w-full gap-8">
             <div
-                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
-                <figure class="text-4xl text-slate-100 p-2 mb-3">
-                    <i class="fa-regular fa-gem" aria-hidden="true"></i>
-                </figure>
-                <div class="relative py-3">
-                    <h1
-                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
-                        <span>231</span
-                        ><span
-                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
-                            >+</span
-                        >
-                    </h1>
+                class="w-full lg:w-[calc(25%_-_32px)]"
+                v-for="(service, index) in services"
+                :key="index">
+                <div class="w-full">
+                    <div
+                        class="p-10 bg-primary w-full flex flex-col items-center justify-center rounded-xl">
+                        <span
+                            class="text-7xl text-slate-100 p-2 mb-3"
+                            v-html="service.icon">
+                        </span>
+                        <div class="relative py-3">
+                            <h1
+                                class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
+                                <span>{{ service.count }}</span>
+                                <span
+                                    class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold">
+                                    +
+                                </span>
+                            </h1>
+                        </div>
+                        <p class="text-slate-300 font-semibold text-xl">
+                            {{ service.name }}
+                        </p>
+                    </div>
                 </div>
-                <p class="text-slate-300 font-semibold text-xl">
-                    Happy Clients
-                </p>
-            </div>
-            <div
-                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
-                <figure class="text-4xl text-slate-100 p-2 mb-3">
-                    <i class="fa-solid fa-pen-ruler" aria-hidden="true"></i>
-                </figure>
-                <div class="relative py-3">
-                    <h1
-                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
-                        <span>91,70,894</span
-                        ><span
-                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
-                            >+</span
-                        >
-                    </h1>
-                </div>
-                <p class="text-slate-300 font-semibold text-xl">
-                    Order Completed
-                </p>
-            </div>
-            <div
-                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
-                <figure class="text-4xl text-slate-100 p-2 mb-3">
-                    <i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
-                </figure>
-                <div class="relative py-3">
-                    <h1
-                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
-                        <span>1,462</span
-                        ><span
-                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
-                            >+</span
-                        >
-                    </h1>
-                </div>
-                <p class="text-slate-300 font-semibold text-xl">
-                    Hours Of Support
-                </p>
-            </div>
-            <div
-                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
-                <figure class="text-4xl text-slate-100 p-2 mb-3">
-                    <i class="fa-solid fa-trophy" aria-hidden="true"></i>
-                </figure>
-                <div class="relative py-3">
-                    <h1
-                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
-                        <span>3499</span
-                        ><span
-                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
-                            >+</span
-                        >
-                    </h1>
-                </div>
-                <p class="text-slate-300 font-semibold text-xl">Employee</p>
             </div>
         </div>
     </div>
@@ -83,4 +35,30 @@
 
 <script setup>
     // defineProps({ services: { type: [Array, undefined], required: true } });
+    const services = [
+        {
+            id: 1,
+            name: 'Happy Clients',
+            icon: '<i class="fa-regular fa-gem"></i>',
+            count: 231,
+        },
+        {
+            id: 2,
+            name: 'Order Completed',
+            icon: '<i class="fa-solid fa-pen-ruler"></i>',
+            count: '9,170,894',
+        },
+        {
+            id: 3,
+            name: 'Hours Of Support',
+            icon: '<i class="fa-solid fa-hand-sparkles"></i>',
+            count: '1,462',
+        },
+        {
+            id: 4,
+            name: 'Employee',
+            icon: '<i class="fa-solid fa-trophy"></i>',
+            count: '3,499',
+        },
+    ];
 </script>

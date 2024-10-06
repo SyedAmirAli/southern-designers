@@ -1,23 +1,10 @@
 <template>
     <div class="container">
-        <div class="flex flex-col items-center justify-center">
-            <h1 class="text-4xl font-semibold pb-4">
-                Our Values <span class="px-2 text-primary">Reviews</span>
-            </h1>
-            <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
-                We provide integrated and customized solutions to global
-                retailers and brands. We are an ethical and entrepreneurial
-                company with a strong sustainability focus. With our keen design
-                sense, extensive industry experience and adoption of the latest
-                techniques and technologies, we are enabling the fashion
-                industry around the world catering to the fast-evolving tastes
-                and preferences of consumers Sourcing.
-            </p>
-        </div>
+        <CenterBreadcrumb name="Reviews" title="Our Value" />
 
         <div class="w-full flex flex-wrap gap-3 justify-between py-5 mt-2">
             <div
-                class="w-full lg:w-[32.75%] relative bg-white group"
+                class="w-full lg:w-[calc(50%_-_12px)] xl:w-[calc(33.33%_-_12px)] relative bg-white group"
                 v-for="(service, index) in services"
                 :key="index">
                 <figure
@@ -68,5 +55,7 @@
 </template>
 
 <script setup>
+    import CenterBreadcrumb from '../commons/CenterBreadcrumb.vue';
+
     defineProps({ services: { type: [Array, undefined], required: true } });
 </script>

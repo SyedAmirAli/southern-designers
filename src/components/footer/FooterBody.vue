@@ -15,7 +15,7 @@
                             company who believes in the art of producing honest
                             and approving garments.
                         </p>
-                        <div class="relative">
+                        <!-- <div class="relative">
                             <input
                                 type="text"
                                 placeholder="e.g. example@gmail.com"
@@ -25,54 +25,24 @@
                                     class="fa-solid fa-paper-plane"
                                     aria-hidden="true"></i>
                             </button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="w-full md:px-12">
                         <h1 class="text-xl font-bold">Company</h1>
                         <ul class="p-2 mt-2">
                             <li
+                                v-for="(item, index) in menuItems"
+                                :key="index"
                                 class="flex gap-3 items-center justify-start my-2">
                                 <i
                                     class="fa-solid fa-angles-right text-primary"
-                                    aria-hidden="true"></i
-                                ><a
-                                    href="#"
-                                    class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
-                                    >About Us</a
-                                >
-                            </li>
-                            <li
-                                class="flex gap-3 items-center justify-start my-2">
-                                <i
-                                    class="fa-solid fa-angles-right text-primary"
-                                    aria-hidden="true"></i
-                                ><a
-                                    href="#"
-                                    class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
-                                    >Company History</a
-                                >
-                            </li>
-                            <li
-                                class="flex gap-3 items-center justify-start my-2">
-                                <i
-                                    class="fa-solid fa-angles-right text-primary"
-                                    aria-hidden="true"></i
-                                ><a
-                                    href="#"
-                                    class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
-                                    >Need a Career</a
-                                >
-                            </li>
-                            <li
-                                class="flex gap-3 items-center justify-start my-2">
-                                <i
-                                    class="fa-solid fa-angles-right text-primary"
-                                    aria-hidden="true"></i
-                                ><a
-                                    href="#"
-                                    class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg"
-                                    >Working Process</a
-                                >
+                                    aria-hidden="true"></i>
+                                <RouterLink
+                                    :to="item.url"
+                                    :target="item.target"
+                                    class="duration-500 hover:ml-3 hover:text-primary font-medium hover:underline text-lg">
+                                    {{ item.title }}
+                                </RouterLink>
                             </li>
                         </ul>
                     </div>
@@ -80,38 +50,34 @@
                 <div class="w-full flex flex-col md:flex-row gap-y-10">
                     <div class="w-full md:px-12">
                         <h1 class="text-xl font-bold">Factory Address</h1>
-                        <div class="p-3 mt-2">
+                        <div
+                            v-for="(factory, index) in factories"
+                            :key="index"
+                            class="p-3 mt-2">
                             <p>
-                                <i
-                                    class="fa-solid fa-calendar-days"
-                                    aria-hidden="true"></i
-                                ><span
+                                <i v-html="factory.icon" aria-hidden="true"></i>
+                                <span
                                     class="font-bold text-sm text-slate-400 px-2"
-                                    >Southern Designers Ltd.</span
+                                    >{{ factory.name }}</span
                                 >
                             </p>
-                            <a
-                                href="#tel:+8809611651500"
-                                class="font-medium text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block"
-                                >Zirabo, Savar, Dhaka info@sdlbd.net</a
-                            >
-                        </div>
-                        <div class="p-3 mt-2">
-                            <p>
-                                <i
-                                    class="fa-solid fa-calendar-days"
-                                    aria-hidden="true"></i
-                                ><span
-                                    class="font-bold text-sm text-slate-400 px-2"
-                                    >Green Life Knit Composite Ltd.</span
-                                >
+                            <p class="pl-2">
+                                <a
+                                    :href="factory.url"
+                                    class="font-medium text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
+                                    {{ factory.address }}
+                                </a>
+                                <a
+                                    :href="factory.email"
+                                    class="font-mono text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
+                                    {{ factory.email }}
+                                </a>
+                                <a
+                                    :href="factory.hotline"
+                                    class="font-mono text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
+                                    {{ factory.hotline }}
+                                </a>
                             </p>
-                            <a
-                                href="tel:#tel:+8809611651500"
-                                class="font-medium text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block"
-                                >Tongabari, Ashulia, Savar
-                                info@greenlifebd.com</a
-                            >
                         </div>
                     </div>
                     <div class="w-full">
@@ -160,4 +126,62 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+    const menuItems = [
+        {
+            id: 1,
+            title: 'Home',
+            url: '/',
+            target: '_self',
+        },
+        {
+            id: 7,
+            title: 'About Us',
+            url: '/about',
+            target: '_self',
+        },
+        {
+            id: 3,
+            title: 'Products',
+            url: '/product',
+            target: '_self',
+        },
+        {
+            id: 2,
+            title: 'Sustainability',
+            url: '/sustainability',
+            target: '_self',
+        },
+        {
+            id: 6,
+            title: 'Our Memories',
+            url: '/media',
+            target: '_self',
+        },
+        {
+            id: 5,
+            title: 'Contact Us',
+            url: '/contact',
+            target: '_self',
+        },
+    ];
+
+    const factories = [
+        {
+            name: 'Southern Designers Ltd.',
+            icon: '<i class="fa-solid fa-calendar-days"></i>',
+            url: 'tel:+8809611651500',
+            address: 'Zirabo, Savar, Dhaka',
+            email: 'info@sdlbd.net',
+            hotline: '+880 178087739',
+        },
+        {
+            name: 'Green Life Knit Composite Ltd.',
+            icon: '<i class="fa-solid fa-calendar-days"></i>',
+            url: 'tel:+8809611651500',
+            address: 'Tongabari, Ashulia, Savar',
+            email: 'info@greenlifebd.com',
+            hotline: '+880 178087739',
+        },
+    ];
+</script>
