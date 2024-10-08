@@ -26,7 +26,7 @@
                     <!-- <image-figure :src="item.image" /> -->
                     <figure class="size-80 relative">
                         <img
-                            :src="assetUrl(item.image)"
+                            :src="asset(item.image)"
                             alt="Sponsor A Child"
                             class="w-full h-full" />
                     </figure>

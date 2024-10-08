@@ -1,20 +1,9 @@
 <template>
     <div class="container pb-5 lg:py-10">
-        <div class="flex flex-col items-center justify-center py-6">
-            <h1 class="text-4xl font-semibold pb-4">
-                Others Services
-                <span class="px-2 text-primary">Southern Designers</span>
-            </h1>
-            <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
-                We provide integrated and customized solutions to global
-                retailers and brands. We are an ethical and entrepreneurial
-                company with a strong sustainability focus. With our keen design
-                sense, extensive industry experience and adoption of the latest
-                techniques and technologies, we are enabling the fashion
-                industry around the world catering to the fast-evolving tastes
-                and preferences of consumers Sourcing.
-            </p>
-        </div>
+        <center-breadcrumb
+            :name="intro.name"
+            :title="intro.title"
+            :summery="intro.summery" />
 
         <div class="flex flex-wrap w-full gap-6 py-10 justify-center">
             <div
@@ -22,9 +11,9 @@
                 :key="service.id"
                 class="w-full lg:w-[48%] xl:w-[31%] p-6 border border-solid border-slate-300 bg-white relative rounded-xl">
                 <div>
-                    <h2 class="text-xl font-medium">{{ service.title }}</h2>
+                    <h2 class="text-xl font-medium">{{ service.name }}</h2>
                     <p class="text-justify leading-6 py-6">
-                        {{ service.description }}
+                        {{ service.summery }}
                     </p>
                     <a :href="service.btn_url" class="mt-5 block rounded-md">
                         <button
@@ -44,7 +33,10 @@
 </template>
 
 <script setup>
-    defineProps({ services: { type: [Array, undefined], required: true } });
+    defineProps({
+        services: { type: [Array, undefined], required: true },
+        intro: { type: Object, default: { name: '', title: '', summery: '' } },
+    });
 </script>
 
 <style scoped></style>

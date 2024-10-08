@@ -2,10 +2,12 @@
     <div class="container mt-10">
         <div class="flex flex-col items-center justify-center">
             <h1 class="text-4xl font-semibold pb-4">
-                Our Memories
-                <span class="px-2 text-primary">Southern Designers</span>
+                {{ intro.memories_title }}
+                <span class="px-2 text-primary">{{
+                    intro.memories_heading
+                }}</span>
             </h1>
-            <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
+            <!-- <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
                 We provide integrated and customized solutions to global
                 retailers and brands. We are an ethical and entrepreneurial
                 company with a strong sustainability focus. With our keen design
@@ -13,20 +15,20 @@
                 techniques and technologies, we are enabling the fashion
                 industry around the world catering to the fast-evolving tastes
                 and preferences of consumers Sourcing.
-            </p>
+            </p> -->
         </div>
 
         <div class="w-full flex flex-wrap gap-3 justify-between pt-5 mt-2">
             <div
                 class="w-full lg:w-[32.75%] relative bg-white group"
-                v-for="(service, index) in reviews"
+                v-for="(service, index) in medias"
                 :key="index">
                 <figure
                     v-if="service.image"
                     class="image-figure before:content-[''] before:block relative w-full before:pt-[100%] overflow-hidden">
                     <img
-                        :src="service.image"
-                        :alt="service.title"
+                        :src="asset(service.image)"
+                        :alt="service.name"
                         class="w-full absolute inset-0 h-full object-cover group-hover:scale-105 duration-500" />
                 </figure>
 
@@ -40,7 +42,7 @@
                             <h1
                                 class="text-4xl font-semibold text-white pt-2 flex w-full justify-between items-center">
                                 <span class="break-all block">{{
-                                    service.title
+                                    service.name
                                 }}</span>
                             </h1>
 
@@ -57,62 +59,14 @@
 </template>
 
 <script setup>
-    import { reactive } from 'vue';
-
-    const reviews = reactive([
-        {
-            id: 1,
-            rating: 5,
-            image: '/images/client-review-1.jpg',
-            icon: '<i class="fa-brands fa-slack"></i>',
-            title: 'Sourcing',
-            summery:
-                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    defineProps({
+        intro: {
+            type: Object,
+            default: { memories_title: '', memories_heading: '' },
         },
-        {
-            id: 2,
-            rating: 4.5,
-            image: '/images/client-review-2.jpg',
-            icon: '<i class="fa-solid fa-city"></i>',
-            title: 'Manufacturing',
-            summery:
-                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        medias: {
+            type: Array,
+            default: [],
         },
-        {
-            id: 3,
-            rating: 3,
-            image: '/images/client-review-3.jpg',
-            icon: '<i class="fa-brands fa-dropbox"></i>',
-            title: 'SD Venture',
-            summery:
-                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
-        },
-        {
-            id: 1,
-            rating: 2.9,
-            image: '/images/client-review-4.jpg',
-            icon: '<i class="fa-brands fa-slack"></i>',
-            title: 'Sourcing',
-            summery:
-                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
-        },
-        {
-            id: 2,
-            rating: 4,
-            image: '/images/client-review-5.jpg',
-            icon: '<i class="fa-solid fa-city"></i>',
-            title: 'Manufacturing',
-            summery:
-                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
-        },
-        {
-            id: 3,
-            rating: 3.1,
-            image: '/images/client-review-6.jpg',
-            icon: '<i class="fa-brands fa-dropbox"></i>',
-            title: 'SD Venture',
-            summery:
-                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
-        },
-    ]);
+    });
 </script>

@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <CenterBreadcrumb name="Reviews" title="Our Value" />
+        <center-breadcrumb
+            :name="intro.name"
+            :title="intro.title"
+            :summery="intro.summery" />
 
         <div class="w-full flex flex-wrap gap-3 justify-between py-5 mt-2">
             <div
@@ -11,8 +14,8 @@
                     v-if="service.image"
                     class="image-figure before:content-[''] before:block relative w-full before:pt-[100%] overflow-hidden">
                     <img
-                        :src="service.image"
-                        :alt="service.title"
+                        :src="asset(service.image)"
+                        :alt="service.name"
                         class="w-full absolute inset-0 h-full object-cover group-hover:scale-105 duration-500" />
                 </figure>
 
@@ -26,7 +29,7 @@
                             <h1
                                 class="text-4xl font-semibold text-white pt-2 flex w-full justify-between items-center">
                                 <span class="break-all block">{{
-                                    service.title
+                                    service.name
                                 }}</span>
                                 <span class="break-all block">
                                     <span class="text-xl">
@@ -45,17 +48,14 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="absolute right-0 top-0 px-6 py-1 bg-primary">
-                    <span>{{ service.rating }}</span>
-                </div> -->
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-    import CenterBreadcrumb from '../commons/CenterBreadcrumb.vue';
-
-    defineProps({ services: { type: [Array, undefined], required: true } });
+    defineProps({
+        services: { type: [Array, undefined], required: true },
+        intro: { type: Object, default: { name: '', title: '', summery: '' } },
+    });
 </script>

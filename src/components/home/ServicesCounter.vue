@@ -1,9 +1,10 @@
 <template>
+    <!-- <center-breadcrumb :name="intro.name" :title="intro.title" :summery="intro.summery" /> -->
     <div
         class="w-full flex items-center justify-center -mt-28 lg:-mt-40 px-4 lg:px-0 pb-4">
         <div class="container flex flex-wrap w-full gap-8">
             <div
-                class="w-full lg:w-[calc(25%_-_32px)]"
+                class="w-full lg:w-[calc(25%_-_32px)] sm:w-[calc(50%_-_32px)]"
                 v-for="(service, index) in services"
                 :key="index">
                 <div class="w-full">
@@ -16,7 +17,7 @@
                         <div class="relative py-3">
                             <h1
                                 class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
-                                <span>{{ service.count }}</span>
+                                <span>{{ service.value }}</span>
                                 <span
                                     class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold">
                                     +
@@ -34,31 +35,8 @@
 </template>
 
 <script setup>
-    // defineProps({ services: { type: [Array, undefined], required: true } });
-    const services = [
-        {
-            id: 1,
-            name: 'Happy Clients',
-            icon: '<i class="fa-regular fa-gem"></i>',
-            count: 231,
-        },
-        {
-            id: 2,
-            name: 'Order Completed',
-            icon: '<i class="fa-solid fa-pen-ruler"></i>',
-            count: '9,170,894',
-        },
-        {
-            id: 3,
-            name: 'Hours Of Support',
-            icon: '<i class="fa-solid fa-hand-sparkles"></i>',
-            count: '1,462',
-        },
-        {
-            id: 4,
-            name: 'Employee',
-            icon: '<i class="fa-solid fa-trophy"></i>',
-            count: '3,499',
-        },
-    ];
+    defineProps({
+        services: { type: Array, default: [] },
+        intro: { type: Object, default: { name: '', title: '', summery: '' } },
+    });
 </script>

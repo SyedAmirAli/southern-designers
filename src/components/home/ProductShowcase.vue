@@ -1,22 +1,9 @@
 <template>
     <div class="container py-5">
-        <div class="flex flex-col items-center justify-center">
-            <h1 class="text-4xl font-semibold py-4">
-                Latest Featured <span class="px-2 text-primary">Products</span>
-            </h1>
-            <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
-                We provide integrated and customized solutions to global
-                retailers and brands. We are an ethical and entrepreneurial
-                company with a strong sustainability focus. With our keen design
-                sense, extensive industry experience and adoption of the latest
-                techniques and technologies, we are enabling the fashion
-                industry around the world catering to the fast-evolving tastes
-                and preferences of consumers Sourcing.
-            </p>
-        </div>
-
-        <!-- Product Showcase -->
-        <!-- class="w-full flex flex-wrap gap-4 items-center justify-center mt-10" -->
+        <center-breadcrumb
+            :name="intro.name"
+            :title="intro.title"
+            :summery="intro.summery" />
         <div class="pt-6">
             <Carousel
                 :value="products"
@@ -27,9 +14,6 @@
                 :autoplayInterval="3000"
                 showIndicators>
                 <template #item="slotProps">
-                    <!-- v-for="(item, index) in products" -->
-                    <!-- :key="index" -->
-                    <!-- :class="[index === 1 ? 'active' : '']"> -->
                     <div class="w-full px-2">
                         <div
                             class="w-full gap-3 bg-slate-50 flex flex-col items-center justify-center relative group rounded-xl border border-solid border-slate-200">
@@ -38,8 +22,8 @@
                                     v-if="slotProps.data?.image"
                                     class="image-figure before:content-[''] before:pt-[100%] before:block relative w-full">
                                     <img
-                                        :src="slotProps.data?.image"
-                                        :alt="slotProps.data?.image"
+                                        :src="asset(slotProps.data?.image)"
+                                        :alt="slotProps.data?.name"
                                         class="w-full rounded-md absolute inset-0 h-full object-cover" />
                                 </figure>
                             </div>
@@ -47,15 +31,15 @@
                             <div class="w-full py-3 px-5">
                                 <h2
                                     class="text-2xl font-semibold text-slate-900 duration-300">
-                                    {{ slotProps.data?.title }}
+                                    {{ slotProps.data?.name }}
                                 </h2>
-                                <h2
-                                    class="text-justify text-slate-600 mb-3 leading-6 py-1 text-lg duration-300">
+                                <p
+                                    class="text-pretty text-slate-600 mb-3 lg:leading-6 py-1 hidden sm:block text-sm lg:text-lg duration-300">
                                     {{
-                                        slotProps.data?.summery?.slice(0, 60) +
+                                        slotProps.data?.title?.slice(0, 60) +
                                         '...'
                                     }}
-                                </h2>
+                                </p>
 
                                 <router-link
                                     to="/product"
@@ -75,50 +59,10 @@
     import { ref } from 'vue';
     import Carousel from 'primevue/carousel';
 
-    const products = ref([
-        {
-            title: 'Knit-1',
-            image: '/images/knit-6.jpg',
-            summery:
-                'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
-        },
-        {
-            title: 'Knit-2',
-            image: '/images/knit-7.jpg',
-            summery:
-                'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
-        },
-        {
-            title: 'Knit-3',
-            image: '/images/knit-12.jpg',
-            summery:
-                'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
-        },
-        {
-            title: 'Knit-4',
-            image: '/images/knit-16.jpg',
-            summery:
-                'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
-        },
-        {
-            title: 'Knit-4',
-            image: '/images/knit-16.jpg',
-            summery:
-                'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
-        },
-        {
-            title: 'Knit-4',
-            image: '/images/knit-16.jpg',
-            summery:
-                'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
-        },
-        {
-            title: 'Knit-4',
-            image: '/images/knit-16.jpg',
-            summery:
-                'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
-        },
-    ]);
+    defineProps({
+        products: { type: Array, default: [] },
+        intro: { type: Object, default: { name: '', title: '', summery: '' } },
+    });
 
     const responsiveOptions = ref([
         {

@@ -15,16 +15,7 @@
     import { ref, onMounted, onUnmounted } from 'vue';
 
     // Array of words to animate
-    const words = [
-        'Foresight',
-        'Simplicity',
-        'Innovation',
-        'Entrepreneurship',
-        'Technology',
-        'Collaboration',
-        'Possibilities',
-        'Globalisation',
-    ];
+    const { words } = defineProps({ words: Array });
 
     const currentWord = ref('');
     let wordIndex = 0;

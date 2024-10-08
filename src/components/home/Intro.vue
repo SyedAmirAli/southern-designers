@@ -1,7 +1,7 @@
 <template>
     <div class="w-full relative">
         <video
-            src="\videos\home-page-video-1.mp4"
+            :src="asset(utility.video)"
             autoplay
             loop
             muted
@@ -12,12 +12,12 @@
             <div class="container">
                 <div class="text-white">
                     <h2 class="text-6xl drop-shadow-2xl font-medium">
-                        We believe in
+                        {{ utility.heading }}
                     </h2>
                     <h1 class="text-7xl font-bold py-3">
-                        <FancyText />
+                        <FancyText :words="utility.texts" />
                     </h1>
-                    <h3 class="text-3xl pt-4">Not at the cost of our world.</h3>
+                    <h3 class="text-3xl pt-4">{{ utility.title }}</h3>
                 </div>
             </div>
         </div>
@@ -26,4 +26,7 @@
 
 <script setup>
     import FancyText from './FancyText.vue';
+    const props = defineProps({ utility: { type: Object, default: {} } });
+
+    info('Intro.vue', props.utility);
 </script>

@@ -1,6 +1,9 @@
 <template>
-    <div class="w-full flex flex-col items-center justify-center">
-        <div
+    <loading v-if="sustainability.state?.isLoading" />
+    <div class="w-full flex flex-col items-center justify-center" v-else>
+        <PageIntro :data="sustainability.state.data?.utilities" />
+
+        <!-- <div
             class="bg-[url('/images/client-review-3.jpg')] h-[50vh] w-full bg-cover bg-center flex items-center justify-center">
             <div class="text-center text-white">
                 <h1 class="text-4xl md:text-6xl font-bold">
@@ -14,28 +17,42 @@
                     Learn More
                 </button>
             </div>
-        </div>
+        </div> -->
 
         <!-- Sustainability Contents -->
 
         <div
             class="bg-white w-full flex flex-col items-center justify-center mb-6">
-            <div class="container pt-6" v-if="about">
+            <div class="container pt-6" v-if="sustainability">
                 <Mission
-                    :image="about?.mission?.attributes?.image"
-                    :icon="about?.mission?.attributes?.icon"
-                    :heading="about?.mission?.attributes?.heading"
-                    :title="about?.mission?.attributes?.title"
-                    :description="about?.mission?.attributes?.description" />
+                    :image="
+                        sustainability.state.data?.utilities?.mission?.image
+                    "
+                    :icon="sustainability.state.data?.utilities?.mission?.icon"
+                    :heading="
+                        sustainability.state.data?.utilities?.mission?.heading
+                    "
+                    :title="
+                        sustainability.state.data?.utilities?.mission?.title
+                    "
+                    :description="
+                        sustainability.state.data?.utilities?.mission
+                            ?.description
+                    " />
 
                 <!-- Vision Container -->
                 <Mission
                     :reverse="true"
-                    :image="about?.vision?.attributes?.image"
-                    :icon="about?.vision?.attributes?.icon"
-                    :heading="about?.vision?.attributes?.heading"
-                    :title="about?.vision?.attributes?.title"
-                    :description="about?.vision?.attributes?.description" />
+                    :image="sustainability.state.data?.utilities?.vision?.image"
+                    :icon="sustainability.state.data?.utilities?.vision?.icon"
+                    :heading="
+                        sustainability.state.data?.utilities?.vision?.heading
+                    "
+                    :title="sustainability.state.data?.utilities?.vision?.title"
+                    :description="
+                        sustainability.state.data?.utilities?.vision
+                            ?.description
+                    " />
             </div>
         </div>
 
@@ -48,11 +65,15 @@
                         <h2 class="font-bold text-xl text-primary">
                             <span class="tracking-[-4px] pr-4">----</span>
                             <span>{{
-                                about?.utilities?.attributes?.info_heading
+                                sustainability.state.data?.utilities
+                                    ?.video_heading
                             }}</span>
                         </h2>
                         <h1 class="text-2xl md:text-4xl font-bold mt-4">
-                            {{ about?.utilities?.attributes?.info_title }}
+                            {{
+                                sustainability.state.data?.utilities
+                                    ?.video_title
+                            }}
                         </h1>
                     </div>
                 </div>
@@ -61,7 +82,8 @@
                     <div
                         class="flex flex-wrap gap-3 items-center justify-center">
                         <div
-                            v-for="(item, index) in about?.videos"
+                            v-for="(item, index) in sustainability.state.data
+                                ?.videos"
                             :key="index"
                             class="w-full lg:w-[32%] sm:w-[48%] rounded-2xl overflow-hidden bg-white shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
                             <div v-html="item?.embed_code"></div>
@@ -79,29 +101,17 @@
 </template>
 
 <script setup>
-    import { sustainability } from '@/assets/data';
     import Mission from '@/components/commons/Mission.vue';
+    import PageIntro from '@/components/commons/PageIntro.vue';
+    import useVueAxiosQuery from '@/utils/useVueAxiosQuery';
     import { onMounted, ref } from 'vue';
 
-    const isLoading = ref(false);
-
-    const about = ref({});
-
-    async function getData() {
-        const data = sustainability; // await fetchWithAxios({ endpoint: "/about-page-items" });
-
-        if (data && 'about' in data) {
-            about.value = data;
-        }
-    }
+    const sustainability = useVueAxiosQuery({
+        endpoint: '/sustainability-items',
+    });
 
     onMounted(async function () {
-        try {
-            isLoading.value = true;
-            await getData();
-        } catch (error) {
-        } finally {
-            isLoading.value = false;
-        }
+        const data = await sustainability.fetchWithAxios();
+        info('sustainability', data);
     });
 </script>

@@ -6,10 +6,9 @@
             class="container max-w-5xl bg-white p-4 rounded-3xl relative border max-h-[100vh] overflow-hidden pb-2">
             <div class="relative">
                 <figure class="flex items-center justify-center">
-                    <!-- :src="assetUrl(activeProduct?.data?.image)" -->
                     <img
-                        :src="activeImage"
-                        :alt="activeProduct?.data?.title"
+                        :src="asset(activeImage)"
+                        :alt="activeProduct?.data?.name"
                         class="h-[40vh] md:h-[55vh] lg:h-[70vh] rounded-xl" />
                 </figure>
 
@@ -18,8 +17,8 @@
                     <figure>
                         <img
                             @click="setActiveImage(activeProduct?.data?.image)"
-                            :src="activeProduct?.data?.image"
-                            :alt="activeProduct?.data?.title"
+                            :src="asset(activeProduct?.data?.image)"
+                            :alt="activeProduct?.data?.name"
                             class="size-12 lg:size-24 rounded-lg lg:rounded-2xl ring-2 lg:ring-4 ring-slate-100 hover:ring-primary cursor-pointer"
                             :class="{
                                 'ring-primary':
@@ -33,7 +32,7 @@
                         :key="index">
                         <img
                             @click="setActiveImage(image)"
-                            :src="image"
+                            :src="asset(image)"
                             :alt="activeProduct?.data?.title"
                             class="size-12 lg:size-24 rounded-lg lg:rounded-2xl ring-2 lg:ring-4 ring-slate-100 hover:ring-primary cursor-pointer"
                             :class="{
@@ -45,13 +44,13 @@
 
             <div class="p-2 w-full border-t border-solid border-slate-300">
                 <h1 class="text-xl font-semibold text-primary">
-                    {{ activeProduct?.data?.title }}
+                    {{ activeProduct?.data?.name }}
                 </h1>
                 <div>
                     <span class="font-bold text-sm text-slate-400"
                         >Summery:</span
                     >
-                    {{ activeProduct?.data?.summery }}
+                    {{ activeProduct?.data?.title }}
                 </div>
                 <div>
                     <span class="font-bold text-sm text-slate-400"

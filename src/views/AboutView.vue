@@ -1,20 +1,8 @@
 <template>
-    <div class="w-full flex flex-col items-center justify-center">
-        <div
-            class="bg-[url('/images/client-review-5.jpg')] h-[50vh] w-full bg-cover bg-center flex items-center justify-center">
-            <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold">
-                    Welcome to Southern Designer
-                </h1>
-                <p class="text-lg md:text-2xl mt-4">
-                    Your tagline or call to action here
-                </p>
-                <button
-                    class="mt-6 px-6 py-3 bg-primary text-white rounded-md hover:bg-green-500 font-semibold tracking-wide duration-500 hover:tracking-wider">
-                    Learn More
-                </button>
-            </div>
-        </div>
+    <loading v-if="about.state?.isLoading" />
+
+    <div class="w-full flex flex-col items-center justify-center" v-else>
+        <PageIntro :data="about.state.data?.utilities" />
 
         <!-- Sustainability Contents -->
         <div
@@ -26,39 +14,43 @@
                         <h2 class="font-bold text-xl text-primary">
                             <span class="tracking-[-4px] pr-4">----</span>
                             <span>{{
-                                about?.utilities?.attributes?.secondary_heading
+                                about.state.data?.utilities?.primary_heading
                             }}</span>
                         </h2>
                         <h1 class="text-2xl md:text-4xl font-bold mt-4">
-                            {{ about?.utilities?.attributes?.secondary_title }}
+                            {{ about.state.data?.utilities?.primary_title }}
                         </h1>
                     </div>
                 </div>
 
                 <!-- Mission Container -->
                 <Mission
-                    :image="about?.mission?.attributes?.image"
-                    :icon="about?.mission?.attributes?.icon"
-                    :heading="about?.mission?.attributes?.heading"
-                    :title="about?.mission?.attributes?.title"
-                    :description="about?.mission?.attributes?.description" />
+                    :image="about.state.data?.utilities?.mission?.image"
+                    :icon="about.state.data?.utilities?.mission?.icon"
+                    :heading="about.state.data?.utilities?.mission?.heading"
+                    :title="about.state.data?.utilities?.mission?.title"
+                    :description="
+                        about.state.data?.utilities?.mission?.description
+                    " />
 
                 <!-- Vision Container -->
                 <Mission
                     :reverse="true"
-                    :image="about?.vision?.attributes?.image"
-                    :icon="about?.vision?.attributes?.icon"
-                    :heading="about?.vision?.attributes?.heading"
-                    :title="about?.vision?.attributes?.title"
-                    :description="about?.vision?.attributes?.description" />
+                    :image="about.state.data?.utilities?.vision?.image"
+                    :icon="about.state.data?.utilities?.vision?.icon"
+                    :heading="about.state.data?.utilities?.vision?.heading"
+                    :title="about.state.data?.utilities?.vision?.title"
+                    :description="
+                        about.state.data?.utilities?.vision?.description
+                    " />
             </div>
         </div>
 
         <!-- About Members Part -->
         <MemberList
-            :about="about?.about"
-            :heading="about?.utilities?.attributes?.primary_heading"
-            :title="about?.utilities?.attributes?.primary_title" />
+            :about="about.state.data?.members"
+            :heading="about?.utilities?.attributes?.member_heading"
+            :title="about?.utilities?.attributes?.member_title" />
 
         <!-- Youtube Iframe Videos -->
         <div class="py-10"></div>
@@ -66,29 +58,16 @@
 </template>
 
 <script setup>
-    import { sustainability } from '@/assets/data';
     import MemberList from '@/components/about/MemberList.vue';
     import Mission from '@/components/commons/Mission.vue';
+    import PageIntro from '@/components/commons/PageIntro.vue';
+    import useVueAxiosQuery from '@/utils/useVueAxiosQuery';
     import { onMounted, ref } from 'vue';
 
-    const isLoading = ref(false);
-    const about = ref({});
-
-    async function getData() {
-        const data = sustainability; // await fetchWithAxios({ endpoint: "/about-page-items" });
-
-        if (data && 'about' in data) {
-            about.value = data;
-        }
-    }
+    const about = useVueAxiosQuery({ endpoint: '/about-items' });
 
     onMounted(async function () {
-        try {
-            isLoading.value = true;
-            await getData();
-        } catch (error) {
-        } finally {
-            isLoading.value = false;
-        }
+        const data = await about.fetchWithAxios();
+        info({ members: data?.members });
     });
 </script>

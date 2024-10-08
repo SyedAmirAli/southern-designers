@@ -8,7 +8,7 @@
         <figure
             class="before:content-[''] before:pt-[100%] lg:before:pt-[70%] before:block relative w-full">
             <img
-                :src="assetUrl(image)"
+                :src="asset(image)"
                 alt="Sponsor A Child"
                 class="w-full rounded-md absolute inset-0 h-full" />
         </figure>
@@ -35,8 +35,6 @@
 </template>
 
 <script setup>
-    import { defineProps } from 'vue';
-
     // Defining the props directly for each value
     const props = defineProps({
         image: { type: [String, undefined], default: '' },

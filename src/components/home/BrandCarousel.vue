@@ -1,21 +1,11 @@
 <template>
     <div class="container py-5">
-        <div class="flex flex-col items-center justify-center">
-            <h1 class="text-4xl font-semibold py-4">
-                Our Values <span class="px-2 text-primary">Brands</span>
-            </h1>
-            <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
-                We provide integrated and customized solutions to global
-                retailers and brands. We are an ethical and entrepreneurial
-                company with a strong sustainability focus. With our keen design
-                sense, extensive industry experience and adoption of the latest
-                techniques and technologies, we are enabling the fashion
-                industry around the world catering to the fast-evolving tastes
-                and preferences of consumers Sourcing.
-            </p>
-        </div>
+        <center-breadcrumb
+            :name="intro.name"
+            :title="intro.title"
+            :summery="intro.summery" />
 
-        <div class="card pt-4">
+        <div class="card pt-4" v-if="Array.isArray(brands)">
             <Carousel
                 :value="brands"
                 :numVisible="5"
@@ -30,7 +20,7 @@
                         <div class="mb-4">
                             <div class="relative mx-auto">
                                 <img
-                                    :src="slotProps.data?.image"
+                                    :src="asset(slotProps.data?.image)"
                                     :alt="slotProps.data?.title"
                                     class="w-full rounded" />
                             </div>
@@ -46,15 +36,12 @@
     import { ref } from 'vue';
     import Carousel from 'primevue/carousel';
 
-    const brands = ref([
-        { title: '', image: '/images/client-1.png' },
-        { title: '', image: '/images/client-2.png' },
-        { title: '', image: '/images/client-3.png' },
-        { title: '', image: '/images/client-4.png' },
-        { title: '', image: '/images/client-5.png' },
-        { title: '', image: '/images/client-6.png' },
-        { title: '', image: '/images/client-9.png' },
-    ]);
+    const props = defineProps({
+        brands: { type: [Array], default: [] },
+        intro: { type: Object, default: { name: '', title: '', summery: '' } },
+    });
+
+    info('Brands', props.brands, 'ignore');
 
     const responsiveOptions = ref([
         {

@@ -50,7 +50,7 @@ export default defineComponent({
                             class='h-20'
                         />
                     </div>
-                    <nav class=''>
+                    <nav class='bg-white'>
                         <ul
                             class='flex lg:!flex gap-0 lg:gap-10 lg:items-center lg:justify-center text-lg font-semibold text-slate-700 absolute lg:static top-24 lg:bg-transparent bg-white z-20 p-6 lg:p-0 flex-col lg:flex-row -left-0 sm:w-full lg:w-auto border-b border-solid border-slate-300 lg:border-none w-[93%]'
                             style={{

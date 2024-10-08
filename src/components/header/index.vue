@@ -8,9 +8,9 @@
                     src="https://greenlifebd.ctpse.info/uploads/1727955467-rand-387318-----1725991337-----logo-removebg-preview.png"
                     class="h-20" />
             </div>
-            <nav class="bg-light">
+            <nav class="">
                 <ul
-                    class="flex lg:flex gap-0 lg:gap-10 lg:items-center lg:justify-center text-lg font-semibold absolute lg:static top-24 lg:bg-light bg-slate-100 z-20 p-6 lg:p-0 flex-col lg:flex-row -left-0 sm:w-full lg:w-auto border-b border-solid border-slate-300 lg:border-none w-[93%] bg-transparent"
+                    class="flex lg:flex gap-0 lg:gap-10 lg:items-center lg:justify-center text-lg font-semibold absolute lg:static top-24 lg:bg-light !bg-slate-100 lg:!bg-transparent z-20 p-6 lg:p-0 flex-col lg:flex-row -left-0 sm:w-full lg:w-auto border-b border-solid border-slate-300 lg:border-none w-[93%] bg-transparent"
                     :class="{ flex: isMobileMenu, hidden: !isMobileMenu }">
                     <li
                         v-for="nav in navItem"
@@ -22,11 +22,12 @@
                             @click="isMobileMenu = false"
                             class="duration-300 lg:hover:text-primary group-hover:text-primary p-4 lg:p-0 rounded block lg:group-[.active]:text-primary group-[.active]:text-slate-100 group-[.active]:bg-primary lg:hover:bg-transparent lg:group-[.active]:bg-light lg:pb-1 lg:group-[.active]:bg-transparent">
                             <span
-                                class="lg:group-hover:text-primary lg:group-[.active]:text-primary"
+                                class="lg:group-hover:text-primary lg:group-[.active]:text-primary text-black lg:text-white"
+                                :class="{ 'lg:text-black': scrolled }"
                                 >{{ nav.name }}</span
                             >
                             <span
-                                class="pl-3 text-sm mb-1 lg:group-hover:text-primary lg:group-[.active]:text-primary"
+                                class="pl-3 text-sm mb-1 lg:group-hover:text-primary lg:group-[.active]:text-primary text-black lg:text-white"
                                 v-if="nav.children.length">
                                 <i
                                     class="fa-solid fa-chevron-down group-hover:rotate-180 duration-500"></i>
@@ -42,14 +43,14 @@
                                 v-for="category in nav.children"
                                 :key="category.id"
                                 class="group children px-6 py-2 min-w-52">
-                                <RouterLink
+                                <router-link
                                     :to="`/product/${category.slug}`"
                                     class="block text-nowrap group-[.children:hover]:text-primary">
                                     <span> {{ category.name }}</span>
 
                                     <p
                                         className="duration-500 group-[.children:hover]:w-full w-0 h-0.5 bg-primary group-[.children.active]:w-full"></p>
-                                </RouterLink>
+                                </router-link>
                             </li>
                         </ul>
                     </li>
@@ -92,6 +93,7 @@
 </template>
 
 <script setup>
+    import useVueAxiosQuery from '@/utils/useVueAxiosQuery';
     import { onMounted, onUnmounted, reactive, ref, watch } from 'vue';
     import { useRoute } from 'vue-router';
 
@@ -105,6 +107,10 @@
     const toggleButton = () => {
         isMobileMenu.value = !isMobileMenu.value;
     };
+
+    const categories = ref([]);
+
+    const category = useVueAxiosQuery({ endpoint: '/categories' });
 
     // Navigation items with active state
     const navItem = reactive([
@@ -125,15 +131,9 @@
         {
             id: 2,
             name: 'Product',
-            href: '/product',
+            href: '#',
             active: false,
-            children: [
-                { id: 1, name: 'Clothing', slug: 'Clothing' },
-                { id: 2, name: 'Footwear', slug: 'Footwear' },
-                { id: 3, name: 'Accessories', slug: 'Accessories' },
-                { id: 4, name: 'Jewelry', slug: 'Jewelry' },
-                { id: 5, name: 'Bags', slug: 'Bags' },
-            ],
+            children: categories,
         },
         {
             id: 3,
@@ -206,7 +206,10 @@
         { immediate: true } // To run the watcher immediately on mount
     );
 
-    onMounted(() => {
+    onMounted(async () => {
+        const data = await category.fetchWithAxios();
+        categories.value = data;
+        info(data);
         window.addEventListener('scroll', throttledScroll);
     });
 

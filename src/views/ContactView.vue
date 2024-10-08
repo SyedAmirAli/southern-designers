@@ -1,6 +1,9 @@
 <template>
+    <loading v-if="contact.state?.isLoading" />
     <div class="w-full flex flex-col items-center justify-center">
-        <div
+        <PageIntro :data="contact.state.data?.utilities" />
+
+        <!-- <div
             class="bg-[url('/images/client-review-1.jpg')] h-[65vh] w-full bg-cover bg-center flex items-center justify-center">
             <div class="text-center text-white">
                 <h1 class="text-4xl md:text-6xl font-bold">
@@ -14,46 +17,24 @@
                     Learn More
                 </button>
             </div>
-        </div>
+        </div> -->
 
         <!-- Contact Contents -->
         <div
-            class="container flex gap-5 lg:gap-20 items-center justify-between">
+            class="container flex flex-col lg:flex-row gap-5 lg:gap-20 items-center justify-between mt-10">
             <div class="w-full">
                 <h1
                     class="text-4xl font-semibold mb-5 pb-2 text-slate-600 border-b border-solid border-slate-300">
-                    Make an appointment!
+                    {{ contact.state.data?.utilities?.contact_title }}
                 </h1>
-                <p>
-                    Schedule a free consultation with our team to discuss your
-                    specific requirements and learn more about how we can help
-                    you. Our experts will work with you to find customized
-                    solutions to meet your goals. Our experienced professionals
-                    work closely with our clients to provide them with
-                    customized solutions for their specific needs, helping them
-                    achieve their goals and grow together. Thank you for
-                    considering us, and we look forward to hearing from you
-                    soon! Schedule a free consultation with our team to discuss
-                    your specific requirements and learn more about how we can
-                    help you. Our experts will work with you to find customized
-                    solutions to meet your goals. Our experienced professionals
-                    work closely with our clients to provide them with
-                    customized solutions for their specific needs, helping them
-                    achieve their goals and grow together. Thank you for
-                    considering us, and we look forward to hearing from you
-                    soon! Schedule a free consultation with our team to discuss
-                    your specific requirements and learn more about how we can
-                    help you. Our experts will work with you to find customized
-                    solutions to meet your goals. Our experienced professionals
-                    work closely with our clients to provide them with
-                    customized solutions for their specific needs, helping them
-                    achieve their goals and grow together. Thank you for
-                    considering us, and we look forward to hearing from you
-                    soon!
-                </p>
+                <div
+                    v-html="
+                        contact.state.data?.utilities?.contact_description
+                    "></div>
             </div>
             <div class="w-full">
                 <form
+                    @submit.prevent="formHandler"
                     class="w-full bg-slate-50 border border-solid border-slate-300 mb-0 mt-10 lg:my-10 px-8 pb-8 pt-6 rounded-3xl shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
                     <h1
                         class="text-center text-3xl font-bold pb-4 border-b border-solid border-slate-300 mb-4">
@@ -67,7 +48,7 @@
                             name="name"
                             title="Your Name" />
                         <Input
-                            v-model="form.name"
+                            v-model="form.email"
                             name="email"
                             title="E-mail" />
                     </div>
@@ -108,8 +89,10 @@
     </div>
 </template>
 <script setup>
+    import PageIntro from '@/components/commons/PageIntro.vue';
     import Input from '@/components/home/Input.vue';
-    import { reactive } from 'vue';
+    import useVueAxiosQuery from '@/utils/useVueAxiosQuery';
+    import { onMounted, reactive } from 'vue';
 
     const form = reactive({
         name: '',
@@ -118,4 +101,30 @@
         address: '',
         message: '',
     });
+
+    const contact = useVueAxiosQuery({ endpoint: '/contact-items' });
+
+    onMounted(async function () {
+        const data = await contact.fetchWithAxios();
+        info({ contact: data?.utilities });
+    });
+
+    async function formHandler() {
+        const res = await contact.fetchWithAxios({
+            endpoint: '/send-contact-message',
+            method: 'POST',
+            body: form,
+            update: false,
+        });
+
+        if (res?.status === 'success') {
+            alert('Your contact information has been recorded!');
+
+            form.name = '';
+            form.email = '';
+            form.phone = '';
+            form.address = '';
+            form.message = '';
+        }
+    }
 </script>

@@ -1,27 +1,19 @@
 <template>
+    <loading v-if="contact.state?.isLoading" />
     <div class="container pb-5">
-        <div class="flex flex-col items-center justify-center">
-            <h1 class="text-4xl font-semibold py-4">
-                Contact With <span class="px-2 text-primary">US</span>
-            </h1>
-            <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
-                We provide integrated and customized solutions to global
-                retailers and brands. We are an ethical and entrepreneurial
-                company with a strong sustainability focus. With our keen design
-                sense, extensive industry experience and adoption of the latest
-                techniques and technologies, we are enabling the fashion
-                industry around the world catering to the fast-evolving tastes
-                and preferences of consumers Sourcing.
-            </p>
-        </div>
+        <center-breadcrumb
+            :name="intro.name"
+            :title="intro.title"
+            :summery="intro.summery" />
 
         <!-- Form -->
         <div class="w-full">
             <form
+                @submit.prevent="formHandler"
                 class="w-full bg-white mb-0 mt-10 lg:my-10 p-8 rounded-3xl shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
                 <div class="w-full flex flex-col gap-3 sm:flex-row">
                     <Input v-model="form.name" name="name" title="Your Name" />
-                    <Input v-model="form.name" name="email" title="E-mail" />
+                    <Input v-model="form.email" name="email" title="E-mail" />
                 </div>
                 <div class="w-full flex flex-col gap-3 sm:flex-row mt-2">
                     <Input
@@ -60,6 +52,7 @@
 <script setup>
     import { reactive } from 'vue';
     import Input from './Input.vue';
+    import useVueAxiosQuery from '@/utils/useVueAxiosQuery';
 
     const form = reactive({
         name: '',
@@ -68,4 +61,29 @@
         address: '',
         message: '',
     });
+
+    defineProps({
+        intro: { type: Object, default: { name: '', title: '', summery: '' } },
+    });
+
+    const contact = useVueAxiosQuery({ endpoint: '/send-contact-message' });
+
+    async function formHandler() {
+        const res = await contact.fetchWithAxios({
+            // endpoint: '/send-contact-message',
+            method: 'POST',
+            body: form,
+            update: false,
+        });
+
+        if (res?.status === 'success') {
+            alert('Your contact information has been recorded!');
+
+            form.name = '';
+            form.email = '';
+            form.phone = '';
+            form.address = '';
+            form.message = '';
+        }
+    }
 </script>

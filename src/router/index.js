@@ -19,11 +19,11 @@ const router = createRouter({
             name: 'SusTainibilityView',
             component: SusTainibilityView,
         },
-        {
-            path: '/product',
-            name: 'ProductView',
-            component: ProductView,
-        },
+        // {
+        //     path: '/product',
+        //     name: 'ProductView',
+        //     component: ProductView,
+        // },
         {
             path: '/product/:slug',
             name: 'CategoryProductsView',
