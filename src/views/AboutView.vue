@@ -6,8 +6,8 @@
 
         <!-- Sustainability Contents -->
         <div
-            class="bg-white w-full flex flex-col items-center justify-center mb-6">
-            <div class="container pt-6" v-if="about">
+            class="bg-white w-full flex flex-col items-center justify-center mb-6 px-2 sm:px-0">
+            <div class="container pt-6 sm:pt-10" v-if="about">
                 <div
                     class="flex flex-col md:flex-row items-center justify-between">
                     <div class="mb-4 md:mb-0">
@@ -17,7 +17,7 @@
                                 about.state.data?.utilities?.primary_heading
                             }}</span>
                         </h2>
-                        <h1 class="text-2xl md:text-4xl font-bold mt-4">
+                        <h1 class="text-2xl md:text-4xl font-bold">
                             {{ about.state.data?.utilities?.primary_title }}
                         </h1>
                     </div>

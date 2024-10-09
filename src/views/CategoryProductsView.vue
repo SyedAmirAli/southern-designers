@@ -17,7 +17,7 @@
 
         <!-- Product Contents -->
         <div
-            class="container flex gap-5 lg:gap-20 items-center justify-between">
+            class="container flex gap-5 lg:gap-20 items-center justify-between px-2 sm:px-0">
             <div
                 class="w-full flex flex-col gap-10 items-center justify-center pb-10 pt-5">
                 <div class="container mt-6">
@@ -134,12 +134,12 @@
     const route = useRoute();
 
     const product = ref({});
-    const selectedCategory = ref(0);
     const activeProduct = ref({ status: false, data: {} });
 
-    function selectCategory(categoryId) {
-        selectedCategory.value = categoryId;
-    }
+    // const selectedCategory = ref(0);
+    // function selectCategory(categoryId) {
+    //     selectedCategory.value = categoryId;
+    // }
 
     function setActiveProduct(data) {
         activeProduct.value.status = true;

@@ -1,6 +1,6 @@
 <template>
     <div
-        class="h-[50vh] w-full bg-cover bg-center flex items-center justify-center"
+        class="h-[65vh] w-full bg-cover bg-center flex items-center justify-center"
         :style="{ backgroundImage: `url(${asset(data.image)})` }">
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-6xl font-bold">

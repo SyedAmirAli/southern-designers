@@ -1,5 +1,6 @@
 <template>
-    <div class="w-full flex flex-col items-center justify-center px-3">
+    <div
+        class="w-full flex flex-col items-center justify-center px-3 sm:pt-10 pb-4">
         <h1 class="text-4xl font-semibold pb-4 text-center">
             {{ title }}<span class="px-2 text-primary">{{ name }}</span>
         </h1>

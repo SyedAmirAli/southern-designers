@@ -1,5 +1,5 @@
 <template>
-    <div class="container py-5">
+    <div class="container py-5 px-2 sm:px-0">
         <center-breadcrumb
             :name="intro.name"
             :title="intro.title"
@@ -41,23 +41,27 @@
                                     }}
                                 </p>
 
-                                <router-link
-                                    to="/product"
+                                <button
+                                    @click="setActiveProduct(slotProps.data)"
                                     class="font-bold text-primary/70 p-2 uppercase rounded duration-500 hover:text-primary hover:tracking-[0.01em]">
                                     <span>See More</span>
                                     <i class="fa-solid fa-arrow-right pl-3"></i>
-                                </router-link>
+                                </button>
+
+                                <!-- Single Product View -->
                             </div>
                         </div>
                     </div>
                 </template>
             </Carousel>
         </div>
+        <SingleProduct :activeProduct="activeProduct" :close="close" />
     </div>
 </template>
 <script setup>
     import { ref } from 'vue';
     import Carousel from 'primevue/carousel';
+    import SingleProduct from '../products/SingleProduct.vue';
 
     defineProps({
         products: { type: Array, default: [] },
@@ -86,4 +90,14 @@
             numScroll: 1,
         },
     ]);
+
+    const activeProduct = ref({ status: false, data: {} });
+    function setActiveProduct(data) {
+        activeProduct.value.status = true;
+        activeProduct.value.data = data;
+    }
+
+    function close() {
+        activeProduct.value.status = false;
+    }
 </script>

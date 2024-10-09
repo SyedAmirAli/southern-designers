@@ -1,5 +1,6 @@
 <template>
-    <div class="w-full flex items-center justify-center py-10 mb-6">
+    <div
+        class="w-full flex items-center justify-center py-10 mb-6 px-2 sm:px-0">
         <div class="container mt-6">
             <!-- <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="mb-4 md:mb-0">

@@ -46,31 +46,6 @@
                         class="h-px w-full border-t border-dashed border-primary/40 mt-3" />
 
                     <!-- Category Navigation -->
-                    <!-- <div class="w-full flex items-center justify-center pt-8">
-                        <ul
-                            v-if="Array.isArray(product?.categories)"
-                            class="flex gap-3 flex-wrap items-center justify-center">
-                            <li
-                                v-for="(category, index) in [
-                                    { id: 0, title: 'All' },
-                                    ...product.categories,
-                                ]"
-                                :class="[
-                                    'group',
-                                    selectedCategory === category?.id
-                                        ? 'active'
-                                        : '',
-                                ]"
-                                :key="index">
-                                <button
-                                    @click="selectCategory(category?.id)"
-                                    class="bg-slate-50 shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)] px-3 py-1 border border-solid border-slate-200 rounded-md duration-500 font-comfortaa font-bold hover:bg-primary hover:text-slate-100 group-[.active]:bg-primary group-[.active]:text-slate-100">
-                                    {{ category?.title }}
-                                </button>
-                            </li>
-                        </ul>
-                    </div> -->
-
                     <div
                         v-if="Array.isArray(product?.products?.data)"
                         class="w-full flex flex-wrap gap-4 justify-center mt-10">

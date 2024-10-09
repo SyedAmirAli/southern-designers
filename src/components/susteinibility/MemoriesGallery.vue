@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-10">
+    <div class="container mt-10 px-2 sm:px-0">
         <div class="flex flex-col items-center justify-center">
             <h1 class="text-4xl font-semibold pb-4">
                 {{ intro.memories_title }}

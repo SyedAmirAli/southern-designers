@@ -1,12 +1,13 @@
 <template>
     <div class="w-full flex items-center justify-center pt-6">
         <div class="container pb-10">
-            <div class="w-full flex flex-col 2xl:flex-row gap-y-10">
-                <div class="w-full flex flex-col md:flex-row gap-y-10">
+            <div class="w-full flex flex-col 2xl:flex-row gap-y-4 sm:gap-y-10">
+                <div
+                    class="w-full flex flex-col md:flex-row gap-y-4 sm:gap-y-10">
                     <div class="w-full">
                         <figure class="w-full">
                             <img
-                                src="https://greenlifebd.ctpse.info/uploads/1727955467-rand-77400-----1725991337-----logo-removebg-preview.png"
+                                src="https://greenlifebd.ctpse.info/uploads/1727955467-rand-387318-----1725991337-----logo-removebg-preview.png"
                                 alt="Logo"
                                 class="w-32" />
                         </figure>
@@ -47,7 +48,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="w-full flex flex-col md:flex-row gap-y-10">
+                <div
+                    class="w-full flex flex-col md:flex-row gap-y-4 sm:gap-y-10">
                     <div class="w-full md:px-12">
                         <h1 class="text-xl font-bold">Factory Address</h1>
                         <div
@@ -81,7 +83,7 @@
                         </div>
                     </div>
                     <div class="w-full">
-                        <h1 class="text-xl font-bold mb-4">Contact Us</h1>
+                        <h1 class="text-xl font-bold">Contact Us</h1>
                         <div class="px-3 py-1">
                             <div class="flex gap-4">
                                 <figure class="text-primary text-2xl">
@@ -143,7 +145,7 @@
         {
             id: 3,
             title: 'Products',
-            url: '/product',
+            url: '#',
             target: '_self',
         },
         {

@@ -1,7 +1,7 @@
 <template>
-    <div class="w-full flex items-center justify-center">
+    <div class="w-full flex items-center justify-center px-2 sm:px-0">
         <div class="container mt-6">
-            <div class="flex flex-col md:flex-row items-center justify-between">
+            <!-- <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="mb-4 md:mb-0">
                     <h2 class="font-bold text-xl text-primary">
                         <span class="tracking-[-4px] pr-4">----</span>
@@ -11,7 +11,7 @@
                         {{ title }}
                     </h1>
                 </div>
-            </div>
+            </div> -->
 
             <div
                 class="w-full flex flex-wrap items-center justify-center xl:justify-between mt-10 gap-10 xl:gap-0">

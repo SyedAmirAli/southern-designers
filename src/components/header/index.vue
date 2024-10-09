@@ -3,11 +3,11 @@
         class="fixed top-0 left-0 w-full z-10 flex items-center justify-center border-solid border-transparent bg-light border text-slate-100 bg-white/10 shadow-[0_0_50px_50px_rgba(255,255,255,0.1)]"
         :class="{ '!bg-white text-slate-900': scrolled }">
         <header class="container flex justify-between items-center bg-light">
-            <div class="logo py-2">
+            <router-link to="/" class="block logo py-2">
                 <img
                     src="https://greenlifebd.ctpse.info/uploads/1727955467-rand-387318-----1725991337-----logo-removebg-preview.png"
                     class="h-20" />
-            </div>
+            </router-link>
             <nav class="">
                 <ul
                     class="flex lg:flex gap-0 lg:gap-10 lg:items-center lg:justify-center text-lg font-semibold absolute lg:static top-24 lg:bg-light !bg-slate-100 lg:!bg-transparent z-20 p-6 lg:p-0 flex-col lg:flex-row -left-0 sm:w-full lg:w-auto border-b border-solid border-slate-300 lg:border-none w-[93%] bg-transparent"
@@ -60,7 +60,7 @@
                 <a
                     target="_blank"
                     class="font-semibold bg-primary/80 text-slate-100 px-4 py-2 text-sm sm:text-[17px] sm:px-7 sm:py-4 uppercase rounded duration-500 hover:bg-primary hover:tracking-[0.01em] flex gap-2 items-center justify-center"
-                    href="null">
+                    href="/">
                     <span class="flex gap-2">Quote Now</span>
                     <span class="pl-3">
                         <i
@@ -217,112 +217,3 @@
         window.removeEventListener('scroll', throttledScroll);
     });
 </script>
-
-<!-- <script setup>
-    import { useCounterStore } from '@/stores/counter';
-    import { onMounted, onUnmounted, reactive, ref, watch } from 'vue';
-    import { useRoute } from 'vue-router';
-
-    // Reactive state
-    const route = useRoute();
-    const isMobileMenu = ref(false);
-
-    const path = ref('/');
-
-    // Toggle button functionality
-    const toggleButton = () => {
-        isMobileMenu.value = !isMobileMenu.value;
-    };
-
-    // const counter = useCounterStore();
-    info('header', path.value);
-
-    watch(
-        () => route.path, // Watch the path specifically
-        (newPath) => {
-            path.value = newPath;
-            info('New path:', newPath); // Log the current path on change
-            info('header', path.value);
-        }
-    );
-
-    // Navigation items with active state
-    const navItem = reactive([
-        {
-            id: 1,
-            name: 'Home',
-            href: '/',
-            active: '/' === path.value,
-            children: [],
-        },
-        {
-            id: 6,
-            name: 'About',
-            href: '/about',
-            active: '/about' === path.value,
-            children: [],
-        },
-        {
-            id: 2,
-            name: 'Product',
-            href: '/product',
-            active: path.value.includes('/product'),
-            children: [
-                { id: 1, name: 'Clothing', slug: 'Clothing' },
-                { id: 2, name: 'Footwear', slug: 'Footwear' },
-                { id: 3, name: 'Accessories', slug: 'Accessories' },
-                { id: 4, name: 'Jewelry', slug: 'Jewelry' },
-                { id: 5, name: 'Bags', slug: 'Bags' },
-            ],
-        },
-        {
-            id: 3,
-            name: 'Sustainability',
-            href: '/sustainability',
-            active: '/sustainability' === path.value,
-            children: [],
-        },
-        {
-            id: 4,
-            name: 'Media',
-            href: '/media',
-            active: '/media' === path.value,
-            children: [],
-        },
-        {
-            id: 7,
-            name: 'Contact',
-            href: '/contact',
-            active: '/contact' === path.value,
-            children: [],
-        },
-    ]);
-
-    function throttle(fn, wait) {
-        let lastCall = 0;
-        return function (...args) {
-            const now = new Date().getTime();
-            if (now - lastCall < wait) return;
-            lastCall = now;
-            return fn(...args);
-        };
-    }
-
-    const scrolled = ref(false);
-
-    const handleScroll = () => {
-        scrolled.value = window.scrollY > 50;
-    };
-
-    const throttledScroll = throttle(handleScroll, 100); // Throttle to run once every 100ms
-
-    onMounted(() => {
-        window.addEventListener('scroll', throttledScroll);
-    });
-
-    onUnmounted(() => {
-        window.removeEventListener('scroll', throttledScroll);
-    });
-</script> -->
-
-<style scoped></style>

@@ -21,7 +21,7 @@
 
         <!-- Contact Contents -->
         <div
-            class="container flex flex-col lg:flex-row gap-5 lg:gap-20 items-center justify-between mt-10">
+            class="container flex flex-col lg:flex-row gap-5 lg:gap-20 items-center justify-between mt-10 px-2 sm:px-0">
             <div class="w-full">
                 <h1
                     class="text-4xl font-semibold mb-5 pb-2 text-slate-600 border-b border-solid border-slate-300">

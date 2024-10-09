@@ -1,5 +1,5 @@
 <template>
-    <div class="container py-5">
+    <div class="container py-5 px-2 sm:px-0">
         <center-breadcrumb
             :name="intro.name"
             :title="intro.title"

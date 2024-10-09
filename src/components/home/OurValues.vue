@@ -5,7 +5,7 @@
             :title="intro.title"
             :summery="intro.summery" />
 
-        <div class="w-full flex flex-wrap gap-3 justify-between py-5 mt-2">
+        <div class="w-full flex flex-wrap sm:gap-3 justify-between py-5 mt-2">
             <div
                 class="w-full lg:w-[calc(50%_-_12px)] xl:w-[calc(33.33%_-_12px)] relative bg-white group"
                 v-for="(service, index) in services"

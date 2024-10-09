@@ -1,6 +1,6 @@
 <template>
     <loading v-if="contact.state?.isLoading" />
-    <div class="container pb-5">
+    <div class="container pb-5 px-2 sm:px-0">
         <center-breadcrumb
             :name="intro.name"
             :title="intro.title"

@@ -51,7 +51,7 @@
 
             info({ utilities: data?.utilities });
         },
-        { immediate: true } // Check immediately when the component is mounted
+        { immediate: true }
     );
 </script>
 

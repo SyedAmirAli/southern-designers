@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-secondary bg-gradient-to-tr from-blue-300/10 to-pink-300/10 via-purple-300/10 w-full flex items-center justify-center pb-20 my-6">
+        class="bg-secondary bg-gradient-to-tr px-2 sm:px-0 from-blue-300/10 to-pink-300/10 via-purple-300/10 w-full flex items-center justify-center pb-20 my-6">
         <div class="container py-10 lg:py-16">
             <h3 class="font-bold text-lg text-primary text-center uppercase">
                 {{ intro.name }}

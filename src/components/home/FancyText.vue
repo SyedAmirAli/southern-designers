@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <h1 class="text-7xl font-bold duration-300 text-white">
+        <h1 class="text-5xl sm:text-7xl font-bold duration-300 text-white">
             <span
                 v-for="(char, index) in currentWord"
                 :key="index"

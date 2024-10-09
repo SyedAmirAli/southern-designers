@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="activeProduct?.status"
-        class="fixed top-0 left-0 w-full flex items-center justify-center h-full z-10 p-2">
+        class="fixed top-0 left-0 w-full flex items-center justify-center h-full z-10 p-2 bg-black/15">
         <div
             class="container max-w-5xl bg-white p-4 rounded-3xl relative border max-h-[100vh] overflow-hidden pb-2">
             <div class="relative">
@@ -93,7 +93,8 @@
                 () => props.activeProduct?.data?.image,
                 (newImage) => {
                     activeImage.value = newImage;
-                }
+                },
+                { immediate: true }
             );
 
             return { activeImage, setActiveImage, close: props.close };
