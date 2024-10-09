@@ -23,7 +23,7 @@
                             class="duration-300 lg:hover:text-primary group-hover:text-primary p-4 lg:p-0 rounded block lg:group-[.active]:text-primary group-[.active]:text-slate-100 group-[.active]:bg-primary lg:hover:bg-transparent lg:group-[.active]:bg-light lg:pb-1 lg:group-[.active]:bg-transparent">
                             <span
                                 class="lg:group-hover:text-primary lg:group-[.active]:text-primary text-black lg:text-white"
-                                :class="{ 'lg:text-black': scrolled }"
+                                :class="{ 'lg:!text-black': scrolled }"
                                 >{{ nav.name }}</span
                             >
                             <span
