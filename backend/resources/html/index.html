@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <main
+      class="w-full min-h-screen p-6 flex items-center justify-center bg-gradient-to-tr from-cyan-500/10 via-white to-purple-500/10 bg-white"
+    >
+      <article
+        class="max-w-xl bg-slate-300/10 border border-solid border-slate-300 shadow-[0px_2px_4px_0px_rgba_(0,0,0,0.12)] rounded-3xl p-10"
+      >
+        <h1 class="text-3xl font-semibold text-primary text-center">
+          Forgot Password
+        </h1>
+
+        <p class="w-full border-t border-solid border-secondary/30 my-4"></p>
+
+        <form action="">
+          <div>
+            <label
+              for="email-or-username"
+              class="font-semibold text-md text-secondary"
+              >Type here your E-mail/Username</label
+            >
+            <input
+              type="text"
+              class="w-full px-4 py-2 font-mono font-semibold mt-1 outline-none border border-solid border-slate-400 rounded-sm text-secondary placeholder:text-slate-500 focus:border-primary"
+              placeholder="Username/example@gmail.com"
+            />
+          </div>
+
+          <div class="mt-4">
+            <div class="group success">
+              <h3
+                class="font-bold group-[.error]:text-red-500 group-[.success]:text-green-500 text-center"
+              >
+                User Founded!
+              </h3>
+              <p class="text-center text-sm mb-2 text-secondary">
+                Checkout the code in your mail inbox/spam
+              </p>
+            </div>
+            <div
+              class="flex gap-5 w-full items-center justify-center"
+              id="code-container"
+            >
+              <input
+                type="text"
+                class="w-12 h-12 p-0 text-center border border-solid border-slate-400 rounded-sm focus:border-primary text-2xl font-bold text-primary placeholder:text-slate-300 input-code"
+                maxlength="1"
+                placeholder="-"
+                name="code[]"
+                id="code1"
+                input-code-and-focus-id="1"
+              /><input
+                type="text"
+                class="w-12 h-12 p-0 text-center border border-solid border-slate-400 rounded-sm focus:border-primary text-2xl font-bold text-primary placeholder:text-slate-300 input-code"
+                maxlength="1"
+                placeholder="-"
+                name="code[]"
+                id="code2"
+                input-code-and-focus-id="2"
+              /><input
+                type="text"
+                class="w-12 h-12 p-0 text-center border border-solid border-slate-400 rounded-sm focus:border-primary text-2xl font-bold text-primary placeholder:text-slate-300 input-code"
+                maxlength="1"
+                placeholder="-"
+                name="code[]"
+                id="code3"
+                input-code-and-focus-id="3"
+              /><input
+                type="text"
+                class="w-12 h-12 p-0 text-center border border-solid border-slate-400 rounded-sm focus:border-primary text-2xl font-bold text-primary placeholder:text-slate-300 input-code"
+                maxlength="1"
+                placeholder="-"
+                name="code[]"
+                id="code4"
+                input-code-and-focus-id="4"
+              /><input
+                type="text"
+                class="w-12 h-12 p-0 text-center border border-solid border-slate-400 rounded-sm focus:border-primary text-2xl font-bold text-primary placeholder:text-slate-300 input-code"
+                maxlength="1"
+                name="code[]"
+                id="code5"
+                placeholder="-"
+                input-code-and-focus-id="5"
+              /><input
+                type="text"
+                class="w-12 h-12 p-0 text-center border border-solid border-slate-400 rounded-sm focus:border-primary text-2xl font-bold text-primary placeholder:text-slate-300 input-code"
+                maxlength="1"
+                placeholder="-"
+                name="code[]"
+                id="code6"
+                input-code-and-focus-id="6"
+              />
+            </div>
+            <p class="text-center mt-1">
+              <span class="text-sm text-secondary/80">Checkout within</span>
+              <span class="text-lg font-bold pl-1 tracking-wide text-primary">
+                <span id="Checkout-available-time">5:00</span>
+                <span class="text-secondary/80 pr-1 -ml-1">s</span>
+              </span>
+              <a
+                href=""
+                class="text-sm text-red-700 capitalize underline duration-300 hover:tracking-wide hover:text-red-500"
+                >resend code</a
+              >
+            </p>
+          </div>
+
+          <div
+            class="mt-6 group loader flex items-center justify-center w-full"
+            id="submit-btn-box"
+          >
+            <div
+              class="animate-loader group-[.loader]:block hidden w-20 h-20 border-4 border-slate-300 border-t-primary"
+            ></div>
+            <button
+              class="group-[.active]:hidden group-[.loader]:hidden w-full py-2 bg-primary text-xl font-semibold text-slate-100 rounded hover:tracking-wide duration-500 hover:bg-secondary"
+            >
+              Find User
+            </button>
+            <p
+              class="group-[.active]:block group-[.loader]:hidden hidden w-full py-2 bg-slate-500 text-xl font-semibold text-slate-100 text-center capitalize rounded pointer-events-none"
+            >
+              timed out
+            </p>
+          </div>
+        </form>
+      </article>
+
+      <div class="m-5">
+        <div
+          class="animate-loader w-20 h-20 border-4 border-slate-300 border-t-primary"
+        ></div>
+      </div>
+    </main>
+
+    <script>
+      const codes = document.querySelectorAll("[input-code-and-focus-id]");
+
+      codes.forEach(function (code, index) {
+        code.oninput = function (event) {
+          const codeId = event.target.getAttribute("input-code-and-focus-id");
+          const focusCode = document.querySelector(
+            `#code${Number(codeId) + 1}`
+          );
+
+          if (focusCode) {
+            focusCode.focus();
+          }
+        };
+
+        code.onkeydown = function (event) {
+          console.log(event.key);
+
+          const codeId = event.target.getAttribute("input-code-and-focus-id");
+          const focusCode = document.querySelector(
+            `#code${Number(codeId) - 1}`
+          );
+
+          if (focusCode) {
+            if (event.key === "Backspace" && event.target.value === "") {
+              focusCode.focus();
+              event.preventDefault();
+            }
+          }
+        };
+      });
+
+      function codeValidationTimer() {
+        const startTime = new Date().getTime();
+        const endTime = new Date().getTime() + 1000 * 60 * 1;
+        const availableTIme = endTime - startTime;
+        let minutes = Math.floor(availableTIme / (1000 * 60));
+        let seconds = Math.floor((availableTIme / 1000) % 60);
+
+        seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+        let interval;
+
+        function intervalTime() {
+          let log = `${minutes}:${seconds}`;
+
+          seconds--;
+
+          if (seconds < 0) {
+            seconds = 59;
+            minutes--;
+          }
+
+          if (minutes < 0) {
+            clearInterval(interval);
+            log = "00:00";
+          }
+
+          if (log === "00:00") {
+            document.getElementById("submit-btn-box").classList.add("active");
+          }
+          document.getElementById("Checkout-available-time").textContent = log;
+        }
+
+        interval = setInterval(intervalTime, 1000);
+      }
+
+      codeValidationTimer();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,894 @@
+
+                <!-- <div
+                    class="mt-10 lg:mt-16 flex flex-col lg:flex-row bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] lg:before:pt-[70%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.mission?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.mission?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.mission?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.mission?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.mission?.attributes?.description }}
+                        </p>
+                    </div>
+                </div> -->
+
+                <!-- <div
+                    class="mt-10 lg:mt-16 flex flex-col-reverse lg:flex-row-reverse bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] lg:before:pt-[70%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.vision?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full object-cover" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.vision?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.vision?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.vision?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.vision?.attributes?.description }}
+                        </p>
+                    </div>
+                </div> -->
+------------------------------------------------------------------------------------------------------------------------------------------
+ <!-- Mission Container -->
+                <div
+                    class="mt-10 lg:mt-16 flex flex-col lg:flex-row bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.mission?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full object-cover" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.mission?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.mission?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.mission?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.mission?.attributes?.description }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vision Container -->
+                <div
+                    class="mt-10 lg:mt-16 flex flex-col-reverse lg:flex-row-reverse bg-white border border-solid border-slate-200 rounded-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                    <figure
+                        class="before:content-[''] before:pt-[100%] before:block relative w-full">
+                        <img
+                            :src="assetUrl(about?.vision?.attributes?.image)"
+                            alt="Sponsor A Child"
+                            class="w-full rounded-md absolute inset-0 h-full object-cover" />
+                    </figure>
+
+                    <div class="w-full flex flex-col p-6 lg:p-10">
+                        <div
+                            class="w-full flex gap-4 items-center justify-start">
+                            <figure
+                                class="text-3xl text-primary px-4"
+                                v-html="
+                                    about?.vision?.attributes?.icon
+                                "></figure>
+                            <div class="">
+                                <h2 class="font-semibold text-3xl text-primary">
+                                    {{ about?.vision?.attributes?.heading }}
+                                </h2>
+                                <p class="text-lg font-medium">
+                                    {{ about?.vision?.attributes?.title }}
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-lg border-t mt-3 pt-5 border-solid border-slate-300">
+                            {{ about?.vision?.attributes?.description }}
+                        </p>
+                    </div>
+                </div>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+<!-- <div class="w-full flex items-center justify-center py-10 lg:py-20">
+            <div class="container mt-6">
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h2 class="font-bold text-xl text-primary">
+                            <span class="tracking-[-4px] pr-4">----</span>
+                            <span>{{
+                                about?.utilities?.attributes?.info_heading
+                            }}</span>
+                        </h2>
+                        <h1 class="text-2xl md:text-4xl font-bold mt-4">
+                            {{ about?.utilities?.attributes?.info_title }}
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="w-full pt-10">
+                    <div
+                        class="flex flex-wrap gap-3 items-center justify-center">
+                        <div
+                            v-for="(item, index) in about?.videos"
+                            :key="index"
+                            class="w-full lg:w-[32%] sm:w-[48%] rounded-2xl overflow-hidden bg-white shadow-[0px_2px_4px_0px_rgba(0,0,0,0.1)]">
+                            <div v-html="item?.embed_code"></div>
+
+                            <p
+                                class="p-3 min-h-20 leading-6 text-lg font-semibold hover:text-primary duration-300">
+                                {{ item?.title }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    <!-- <div
+        class="w-full flex items-center justify-center -mt-28 lg:-mt-40 px-4 lg:px-0">
+        <div
+            class="container p-16 bg-primary flex flex-wrap items-center justify-between rounded-xl gap-y-10">
+            <div
+                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
+                <figure class="text-4xl text-slate-100 p-2 mb-3">
+                    <i class="fa-regular fa-gem" aria-hidden="true"></i>
+                </figure>
+                <div class="relative py-3">
+                    <h1
+                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
+                        <span>231</span
+                        ><span
+                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
+                            >+</span
+                        >
+                    </h1>
+                </div>
+                <p class="text-slate-300 font-semibold text-xl">
+                    Happy Clients
+                </p>
+            </div>
+            <div
+                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
+                <figure class="text-4xl text-slate-100 p-2 mb-3">
+                    <i class="fa-solid fa-pen-ruler" aria-hidden="true"></i>
+                </figure>
+                <div class="relative py-3">
+                    <h1
+                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
+                        <span>91,70,894</span
+                        ><span
+                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
+                            >+</span
+                        >
+                    </h1>
+                </div>
+                <p class="text-slate-300 font-semibold text-xl">
+                    Order Completed
+                </p>
+            </div>
+            <div
+                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
+                <figure class="text-4xl text-slate-100 p-2 mb-3">
+                    <i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
+                </figure>
+                <div class="relative py-3">
+                    <h1
+                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
+                        <span>1,462</span
+                        ><span
+                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
+                            >+</span
+                        >
+                    </h1>
+                </div>
+                <p class="text-slate-300 font-semibold text-xl">
+                    Hours Of Support
+                </p>
+            </div>
+            <div
+                class="w-full xl:w-[23%] sm:w-[46%] flex flex-col items-center justify-start">
+                <figure class="text-4xl text-slate-100 p-2 mb-3">
+                    <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                </figure>
+                <div class="relative py-3">
+                    <h1
+                        class="text-5xl font-extrabold font-comfortaa text-slate-50 relative">
+                        <span>3499</span
+                        ><span
+                            class="absolute block text-slate-100 -top-8 -right-7 text-4xl font-bold"
+                            >+</span
+                        >
+                    </h1>
+                </div>
+                <p class="text-slate-300 font-semibold text-xl">Employee</p>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+Bags
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<script setup>
+    import BrandCarousel from '@/components/home/BrandCarousel.vue';
+    import ContactForm from '@/components/home/ContactForm.vue';
+    import ExtraServices from '@/components/home/ExtraServices.vue';
+    import Intro from '@/components/home/Intro.vue';
+    import MainServices from '@/components/home/MainServices.vue';
+    import OurValues from '@/components/home/OurValues.vue';
+    import PopularServices from '@/components/home/PopularServices.vue';
+    import ProductShowcase from '@/components/home/ProductShowcase.vue';
+    import ServicesCounter from '@/components/home/ServicesCounter.vue';
+    import useVueAxiosQuery from '@/utils/useVueAxiosQuery';
+    import { onMounted, reactive } from 'vue';
+
+    const mainServices = reactive([
+        {
+            id: 1,
+            image: '/images/knit-6.jpg',
+            icon: '<i class="fa-brands fa-slack"></i>',
+            title: 'Sourcing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 2,
+            image: '/images/knit-7.jpg',
+            icon: '<i class="fa-solid fa-city"></i>',
+            title: 'Manufacturing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 3,
+            image: '/images/knit-12.jpg',
+            icon: '<i class="fa-brands fa-dropbox"></i>',
+            title: 'SD Venture',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+    ]);
+
+    const popularServices = reactive([
+        {
+            id: 1,
+            name: 'Garments',
+            title: 'Sed perspicias unde omnis natus error volute',
+            btn_title: 'learn more',
+            btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+            btn_url: '#',
+            btn_target: '_blank',
+            image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-843473-----1.jpg',
+        },
+        {
+            id: 2,
+            name: 'Kniting',
+            title: 'Sed perspicias unde omnis natus error volute',
+            btn_title: 'learn more',
+            btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+            btn_url: '#',
+            btn_target: '_blank',
+            image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-10377-----3.jpg',
+        },
+        {
+            id: 3,
+            name: 'Dyeing',
+            title: 'Sed perspicias unde omnis natus error volute',
+            btn_title: 'learn more',
+            btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+            btn_url: '#',
+            btn_target: '_blank',
+            image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-406621-----2.jpg',
+        },
+        {
+            id: 4,
+            name: 'Embroidery',
+            title: 'Sed perspicias unde omnis natus error volute',
+            btn_title: 'learn more',
+            btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+            btn_url: '#',
+            btn_target: '_blank',
+            image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-122938-----4.jpg',
+        },
+    ]);
+
+    const extraServices = reactive([
+        {
+            id: 1,
+            title: 'Sign & Paint VIP Program',
+            description:
+                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos, iste ipsum fugit nulla soluta eveniet magni, repudiandae.',
+            icon: "<i class='fa-solid fa-heart-circle-bolt'></i>",
+            btn_title: 'learn more',
+            btn_icon: "<i class='fa-solid fa-arrow-right'></i>",
+            btn_url: '#',
+        },
+        {
+            id: 2,
+            title: 'Quick & Super fast delivery',
+            description:
+                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos, iste ipsum fugit nulla soluta eveniet magni, repudiandae.',
+            btn_icon: "<i class='fa-brands fa-canadian-maple-leaf'></i>",
+            btn_title: 'Explore now',
+            icon: "<i class='fa-solid fa-truck-moving'></i>",
+            btn_url: '#',
+        },
+        {
+            id: 3,
+            title: 'Awareness & Support',
+            description:
+                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos, iste ipsum fugit nulla soluta eveniet magni, repudiandae.',
+            btn_icon: "<i class='fa-solid fa-hand'></i>",
+            btn_title: 'support for help',
+            icon: "<i class='fa-solid fa-hand-holding-hand'></i>",
+            btn_url: '#',
+        },
+    ]);
+
+    const reviews = reactive([
+        {
+            id: 1,
+            rating: 5,
+            image: '/images/client-review-1.jpg',
+            icon: '<i class="fa-brands fa-slack"></i>',
+            title: 'Sourcing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 2,
+            rating: 4.5,
+            image: '/images/client-review-2.jpg',
+            icon: '<i class="fa-solid fa-city"></i>',
+            title: 'Manufacturing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 3,
+            rating: 3,
+            image: '/images/client-review-3.jpg',
+            icon: '<i class="fa-brands fa-dropbox"></i>',
+            title: 'SD Venture',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 1,
+            rating: 2.9,
+            image: '/images/client-review-4.jpg',
+            icon: '<i class="fa-brands fa-slack"></i>',
+            title: 'Sourcing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 2,
+            rating: 4,
+            image: '/images/client-review-5.jpg',
+            icon: '<i class="fa-solid fa-city"></i>',
+            title: 'Manufacturing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 3,
+            rating: 3.1,
+            image: '/images/client-review-6.jpg',
+            icon: '<i class="fa-brands fa-dropbox"></i>',
+            title: 'SD Venture',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+    ]);
+
+    const home = useVueAxiosQuery({ endpoint: '/homepage-items' });
+
+    onMounted(async function () {
+        await home.fetchWithAxios();
+    });
+</script>
+
+<template>
+    <loading v-if="home.state.isLoading" />
+    <main
+        class="w-full bg-white bg-gradient-to-tr from-primary/10 to-purple-300/10 via-pink-300/10">
+        <Intro />
+
+        <article class="flex flex-col items-center justify-center py-10">
+            <!-- Main Services -->
+            <MainServices :services="mainServices" />
+
+            <!-- Popular Services -->
+            <PopularServices :services="popularServices" />
+
+            <!-- Services Counter -->
+            <ServicesCounter />
+
+            <!-- Extra Services -->
+            <ExtraServices :services="extraServices" />
+
+            <!-- Client Reviews / Our Values -->
+            <OurValues :services="reviews" />
+
+            <!-- Showcase Products -->
+            <ProductShowcase />
+
+            <!-- Brands Carousel -->
+            <BrandCarousel />
+
+            <!-- Contact Form -->
+            <ContactForm />
+        </article>
+    </main>
+</template>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    // const products = ref([
+    //     {
+    //         title: 'Knit-1',
+    //         image: '/images/knit-6.jpg',
+    //         summery:
+    //             'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
+    //     },
+    //     {
+    //         title: 'Knit-2',
+    //         image: '/images/knit-7.jpg',
+    //         summery:
+    //             'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
+    //     },
+    //     {
+    //         title: 'Knit-3',
+    //         image: '/images/knit-12.jpg',
+    //         summery:
+    //             'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
+    //     },
+    //     {
+    //         title: 'Knit-4',
+    //         image: '/images/knit-16.jpg',
+    //         summery:
+    //             'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
+    //     },
+    //     {
+    //         title: 'Knit-4',
+    //         image: '/images/knit-16.jpg',
+    //         summery:
+    //             'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
+    //     },
+    //     {
+    //         title: 'Knit-4',
+    //         image: '/images/knit-16.jpg',
+    //         summery:
+    //             'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
+    //     },
+    //     {
+    //         title: 'Knit-4',
+    //         image: '/images/knit-16.jpg',
+    //         summery:
+    //             'Beatae perferendis, ratione itaque fugiat recusandae. Praesentium rerum quam impedit molestiae ut laboriosam repellat deserunt?',
+    //     },
+    // ]);
+// const services = [
+    //     {
+    //         id: 1,
+    //         name: 'Happy Clients',
+    //         icon: '<i class="fa-regular fa-gem"></i>',
+    //         count: 231,
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Order Completed',
+    //         icon: '<i class="fa-solid fa-pen-ruler"></i>',
+    //         count: '9,170,894',
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'Hours Of Support',
+    //         icon: '<i class="fa-solid fa-hand-sparkles"></i>',
+    //         count: '1,462',
+    //     },
+    //     {
+    //         id: 4,
+    //         name: 'Employee',
+    //         icon: '<i class="fa-solid fa-trophy"></i>',
+    //         count: '3,499',
+    //     },
+    // ];
+        <!-- <div class="flex flex-col items-center justify-center py-6">
+            <h1 class="text-4xl font-semibold pb-4">
+                Your platform to the world
+            </h1>
+            <p class="max-w-[75%] w-full text-slate-600 leading-6 text-center">
+                We provide integrated and customized solutions to global
+                retailers and brands. We are an ethical and entrepreneurial
+                company with a strong sustainability focus. With our keen design
+                sense, extensive industry experience and adoption of the latest
+                techniques and technologies, we are enabling the fashion
+                industry around the world catering to the fast-evolving tastes
+                and preferences of consumers Sourcing We enable our esteemed
+                customers to source multiple across all products and categories
+                through our partners in key markets. We provide them our market
+                know-how, in- house design-led capabilities while we are able to
+                manage the entire supply chain execution for our customers.
+                Manufacturing We have a created our own manufacturing capacities
+                spread across three countries – Bangladesh, Sri Lanka and India,
+                where we have as many as 130 production lines. Our customized
+                services, quality-focused approach and compliance has earned us
+                customer trust and loyalty.
+            </p>
+        </div> -->
+                <!-- <figure>
+                                <img
+                                    :src="service.image"
+                                    :alt="service.title" 
+                                    />
+                            </figure> -->
+    // const mainServices = reactive([
+    //     {
+    //         id: 1,
+    //         image: '/images/knit-6.jpg',
+    //         icon: '<i class="fa-brands fa-slack"></i>',
+    //         title: 'Sourcing',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: '/images/knit-7.jpg',
+    //         icon: '<i class="fa-solid fa-city"></i>',
+    //         title: 'Manufacturing',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    //     {
+    //         id: 3,
+    //         image: '/images/knit-12.jpg',
+    //         icon: '<i class="fa-brands fa-dropbox"></i>',
+    //         title: 'SD Venture',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    // ]);
+
+    // const popularServices = reactive([
+    //     {
+    //         id: 1,
+    //         name: 'Garments',
+    //         title: 'Sed perspicias unde omnis natus error volute',
+    //         btn_title: 'learn more',
+    //         btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+    //         btn_url: '#',
+    //         btn_target: '_blank',
+    //         image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-843473-----1.jpg',
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Kniting',
+    //         title: 'Sed perspicias unde omnis natus error volute',
+    //         btn_title: 'learn more',
+    //         btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+    //         btn_url: '#',
+    //         btn_target: '_blank',
+    //         image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-10377-----3.jpg',
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'Dyeing',
+    //         title: 'Sed perspicias unde omnis natus error volute',
+    //         btn_title: 'learn more',
+    //         btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+    //         btn_url: '#',
+    //         btn_target: '_blank',
+    //         image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-406621-----2.jpg',
+    //     },
+    //     {
+    //         id: 4,
+    //         name: 'Embroidery',
+    //         title: 'Sed perspicias unde omnis natus error volute',
+    //         btn_title: 'learn more',
+    //         btn_icon: '<i class="fa-solid fa-arrow-right pl-3"></i>',
+    //         btn_url: '#',
+    //         btn_target: '_blank',
+    //         image: 'https://greenlifebd.ctpse.info/uploads/1727931892-rand-122938-----4.jpg',
+    //     },
+    // ]);
+
+    // const extraServices = reactive([
+    //     {
+    //         id: 1,
+    //         title: 'Sign & Paint VIP Program',
+    //         description:
+    //             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos, iste ipsum fugit nulla soluta eveniet magni, repudiandae.',
+    //         icon: "<i class='fa-solid fa-heart-circle-bolt'></i>",
+    //         btn_title: 'learn more',
+    //         btn_icon: "<i class='fa-solid fa-arrow-right'></i>",
+    //         btn_url: '#',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'Quick & Super fast delivery',
+    //         description:
+    //             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos, iste ipsum fugit nulla soluta eveniet magni, repudiandae.',
+    //         btn_icon: "<i class='fa-brands fa-canadian-maple-leaf'></i>",
+    //         btn_title: 'Explore now',
+    //         icon: "<i class='fa-solid fa-truck-moving'></i>",
+    //         btn_url: '#',
+    //     },
+    //     {
+    //         id: 3,
+    //         title: 'Awareness & Support',
+    //         description:
+    //             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos, iste ipsum fugit nulla soluta eveniet magni, repudiandae.',
+    //         btn_icon: "<i class='fa-solid fa-hand'></i>",
+    //         btn_title: 'support for help',
+    //         icon: "<i class='fa-solid fa-hand-holding-hand'></i>",
+    //         btn_url: '#',
+    //     },
+    // ]);
+
+    // const reviews = reactive([
+    //     {
+    //         id: 1,
+    //         rating: 5,
+    //         image: '/images/client-review-1.jpg',
+    //         icon: '<i class="fa-brands fa-slack"></i>',
+    //         title: 'Sourcing',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    //     {
+    //         id: 2,
+    //         rating: 4.5,
+    //         image: '/images/client-review-2.jpg',
+    //         icon: '<i class="fa-solid fa-city"></i>',
+    //         title: 'Manufacturing',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    //     {
+    //         id: 3,
+    //         rating: 3,
+    //         image: '/images/client-review-3.jpg',
+    //         icon: '<i class="fa-brands fa-dropbox"></i>',
+    //         title: 'SD Venture',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    //     {
+    //         id: 1,
+    //         rating: 2.9,
+    //         image: '/images/client-review-4.jpg',
+    //         icon: '<i class="fa-brands fa-slack"></i>',
+    //         title: 'Sourcing',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    //     {
+    //         id: 2,
+    //         rating: 4,
+    //         image: '/images/client-review-5.jpg',
+    //         icon: '<i class="fa-solid fa-city"></i>',
+    //         title: 'Manufacturing',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    //     {
+    //         id: 3,
+    //         rating: 3.1,
+    //         image: '/images/client-review-6.jpg',
+    //         icon: '<i class="fa-brands fa-dropbox"></i>',
+    //         title: 'SD Venture',
+    //         summery:
+    //             'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+    //     },
+    // ]);
+
+
+    // const homeData = ref({});
+    // homeData.setBrands(data?.brands);
+    // homeData.value = data;
+    // info(data);
+    // const homeData = useHomeStore();
+    // provide('brands', homeData?.brands || []);
+    
+    // import useHomeStore from '@/stores/homeStore';
+    // const brands = ref([
+    //     { title: '', image: '/images/client-1.png' },
+    //     { title: '', image: '/images/client-2.png' },
+    //     { title: '', image: '/images/client-3.png' },
+    //     { title: '', image: '/images/client-4.png' },
+    //     { title: '', image: '/images/client-5.png' },
+    //     { title: '', image: '/images/client-6.png' },
+    //     { title: '', image: '/images/client-9.png' },
+    // ]);
+
+    // const { brands } = useHomeStore();
+    // const brands = inject('brands')
+    // const brands = [];
+
+    {
+    "primary_video_title": "We believe in",
+    "secondary_video_title": "Not at the cost of our world.",
+    "fancy_texts": "Foresight,Simplicity,Innovation,Entrepreneurship,Technology,Collaboration,Possibilities,Globalisation",
+    "video": "media/home-page-setup/videos/home-page-video.mp4",
+    "main_services": {
+        "name": "Your platform to the world",
+        "title": null,
+        "summery": "We provide integrated and customized solutions to global retailers and brands. We are an ethical and entrepreneurial company with a strong sustainability focus. With our keen design sense, extensive industry experience and adoption of the latest techniques and technologies, we are enabling the fashion industry around the world catering to the fast-evolving tastes and preferences of consumers Sourcing We enable our esteemed customers to source multiple across all products and categories through our partners in key markets. We provide them our market know-how, in- house design-led capabilities while we are able to manage the entire supply chain execution for our customers. Manufacturing We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty."
+    },
+    "primary_services": {
+        "name": "Southern Designers",
+        "title": "Others Services",
+        "summery": "We provide integrated and customized solutions to global retailers and brands. We are an ethical and entrepreneurial company with a strong sustainability focus. With our keen design sense, extensive industry experience and adoption of the latest techniques and technologies, we are enabling the fashion industry around the world catering to the fast-evolving tastes and preferences of consumers Sourcing."
+    },
+    "counter_services": {
+        "name": "Our Professional Solutions For Business",
+        "title": "Popular services",
+        "summery": "We provide integrated and customized solutions to global retailers and brands. We are an ethical and entrepreneurial company with a strong sustainability focus. With our keen design sense, extensive industry experience and adoption of the latest techniques and technologies, we are enabling the fashion industry around the world catering to the fast-evolving tastes and preferences of consumers Sourcing We enable our esteemed customers to source multiple across all products and categories through our partners in key markets. We provide them our market know-how, in- house design-led capabilities while we are able to manage the entire supply chain execution for our customers."
+    },
+    "reviews": {
+        "name": "Reviews",
+        "title": "Our Value",
+        "summery": "We provide integrated and customized solutions to global retailers and brands. We are an ethical and entrepreneurial company with a strong sustainability focus. With our keen design sense, extensive industry experience and adoption of the latest techniques and technologies, we are enabling the fashion industry around the world catering to the fast-evolving tastes and preferences of consumers Sourcing."
+    },
+    "featured_products": {
+        "name": "Featured Products",
+        "title": "Latest",
+        "summery": "We provide integrated and customized solutions to global retailers and brands. We are an ethical and entrepreneurial company with a strong sustainability focus. With our keen design sense, extensive industry experience and adoption of the latest techniques and technologies, we are enabling the fashion industry around the world catering to the fast-evolving tastes and preferences of consumers Sourcing."
+    },
+    "brands": {
+        "name": "Brands",
+        "title": "Our Values",
+        "summery": "We provide integrated and customized solutions to global retailers and brands. We are an ethical and entrepreneurial company with a strong sustainability focus. With our keen design sense, extensive industry experience and adoption of the latest techniques and technologies, we are enabling the fashion industry around the world catering to the fast-evolving tastes and preferences of consumers Sourcing."
+    },
+    "contact": {
+        "name": "US",
+        "title": "Contact With",
+        "summery": "We provide integrated and customized solutions to global retailers and brands. We are an ethical and entrepreneurial company with a strong sustainability focus. With our keen design sense, extensive industry experience and adoption of the latest techniques and technologies, we are enabling the fashion industry around the world catering to the fast-evolving tastes and preferences of consumers Sourcing."
+    }
+}
+
+{
+    "heading": "Welcome to Southern Designer",
+    "name": "Your tagline or call to action here",
+    "btn_title": "Learn More",
+    "btn_target": "_blank",
+    "btn_url": "#",
+    
+    "image": "media/about-banner/images/2024-10-08-vmiLAC8kNz77MwxsnipoRZfGmo6kbA0uIYtAdrCd.jpg",
+    
+}"member_title": "Exclusive Members",
+    "member_heading": "Meet Our Experience Team Members",
+    "primary_title": "About Us",
+    "primary_heading": "Who we are",
+        <!-- <div
+            class="bg-[url('/images/client-review-5.jpg')] h-[50vh] w-full bg-cover bg-center flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold">
+                    Welcome to Southern Designer
+                </h1>
+                <p class="text-lg md:text-2xl mt-4">
+                    Your tagline or call to action here
+                </p>
+                <button
+                    class="mt-6 px-6 py-3 bg-primary text-white rounded-md hover:bg-green-500 font-semibold tracking-wide duration-500 hover:tracking-wider">
+                    Learn More
+                </button>
+            </div>
+        </div> -->
+
+    const reviews = reactive([
+        {
+            id: 1,
+            rating: 5,
+            image: '/images/client-review-1.jpg',
+            icon: '<i class="fa-brands fa-slack"></i>',
+            title: 'Sourcing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 2,
+            rating: 4.5,
+            image: '/images/client-review-2.jpg',
+            icon: '<i class="fa-solid fa-city"></i>',
+            title: 'Manufacturing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 3,
+            rating: 3,
+            image: '/images/client-review-3.jpg',
+            icon: '<i class="fa-brands fa-dropbox"></i>',
+            title: 'SD Venture',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 1,
+            rating: 2.9,
+            image: '/images/client-review-4.jpg',
+            icon: '<i class="fa-brands fa-slack"></i>',
+            title: 'Sourcing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 2,
+            rating: 4,
+            image: '/images/client-review-5.jpg',
+            icon: '<i class="fa-solid fa-city"></i>',
+            title: 'Manufacturing',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+        {
+            id: 3,
+            rating: 3.1,
+            image: '/images/client-review-6.jpg',
+            icon: '<i class="fa-brands fa-dropbox"></i>',
+            title: 'SD Venture',
+            summery:
+                'We have a created our own manufacturing capacities spread across three countries – Bangladesh, Sri Lanka and India, where we have as many as 130 production lines. Our customized services, quality-focused approach and compliance has earned us customer trust and loyalty.',
+        },
+    ]);
