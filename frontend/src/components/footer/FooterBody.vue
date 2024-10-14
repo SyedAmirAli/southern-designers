@@ -44,47 +44,52 @@
                             {{ settings?.footer_title_2 }}
                         </h1>
                         <div
+                            class="w-full"
                             v-for="(factory, index) in [
                                 settings?.factory_address_1,
                                 settings?.factory_address_2,
                                 settings?.factory_address_3,
                                 settings?.factory_address_4,
                             ]"
-                            :key="index"
-                            class="p-3 mt-2">
-                            <p>
-                                <i
-                                    v-html="factory?.icon"
-                                    aria-hidden="true"></i>
-                                <span
-                                    class="font-bold text-sm text-slate-400 px-2"
-                                    >{{ factory?.title }}</span
-                                >
-                            </p>
-                            <p class="pl-2">
-                                <a
-                                    target="_blank"
-                                    :to="factory?.url || '#'"
-                                    :target="factory?.target || 'target'"
-                                    class="font-medium text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
-                                    {{ factory?.location }}
-                                </a>
-                                <a
-                                    target="_blank"
-                                    :to="
-                                        'mailto:' +
-                                        (factory?.email || 'example@gmail.com')
-                                    "
-                                    class="font-mono text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
-                                    {{ factory?.email }}
-                                </a>
-                                <a
-                                    target="_blank"
-                                    :href="'tel:' + (factory?.phone || '+8801')"
-                                    class="font-mono text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
-                                    {{ factory?.phone }}
-                                </a>
-                            </p>
+                            :key="index">
+                            <div class="p-3 mt-2" v-if="factory?.location">
+                                <p>
+                                    <i
+                                        v-html="factory?.icon"
+                                        aria-hidden="true"></i>
+                                    <span
+                                        class="font-bold text-sm text-slate-400 px-2"
+                                        >{{ factory?.title }}</span
+                                    >
+                                </p>
+                                <p class="pl-2">
+                                    <a
+                                        target="_blank"
+                                        :to="factory?.url || '#'"
+                                        :target="factory?.target || 'target'"
+                                        class="font-medium text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
+                                        {{ factory?.location }}
+                                    </a>
+                                    <a
+                                        target="_blank"
+                                        :to="
+                                            'mailto:' +
+                                            (factory?.email ||
+                                                'example@gmail.com')
+                                        "
+                                        class="font-mono text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
+                                        {{ factory?.email }}
+                                    </a>
+                                    <a
+                                        target="_blank"
+                                        :href="
+                                            'tel:' + (factory?.phone || '+8801')
+                                        "
+                                        class="font-mono text-lg mt-1 leading-6 duration-300 hover:text-primary hover:underline block">
+                                        {{ factory?.phone }}
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="w-full">
